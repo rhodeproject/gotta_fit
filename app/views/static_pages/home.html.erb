@@ -1,2 +1,12 @@
-<h1>Welcome to gotta fit</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<%= render 'layouts/header' %>
+<div class="center hero-unit">
+  <h1>Tri Fit Lab</h1>
+  <h2>
+    Welcome to the Tri Fit Lab's Multi-rider Sign-up<br><br>
+
+  </h2>
+      <%= link_to "Sign in!", '/signin', class: "btn btn-large btn-primary" %> or
+      <%= link_to "Sign up now!", '/signup', class: "btn btn-large btn-primary" %>
+</div>
+
+<%= render 'layouts/footer' %>
