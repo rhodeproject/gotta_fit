@@ -1,0 +1,30 @@
+<% provide(:title, @user.first_name) %>
+<div class="row">
+  <aside class="span3">
+    <section>
+      <h1>
+       <%= @user.first_name %>
+      </h1>
+    </section>
+  </aside>
+  <% if @user.active? %>
+      <div class="span6">
+        <div class="hero-unit">
+          <h4>
+            <p>You account is Active</p>
+          </h4>
+        </div>
+      </div>
+  <%else%>
+      <div class="span6">
+        <div class="hero-unit">
+       <h4>
+         <p>You account is inactive, an email has bee sent
+            to <%= @user.email %>. Follow the link in the email to active you account
+         </p>
+       </h4>
+      </div>
+      </div>
+  <% end %>
+</div>
+
