@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   #callbacks
   before_save :create_remember_token
   before_save { |user| user.email = email.downcase}
+  after_save  :create_code
+  after_save  { |user| send_confirm(user)}
 
   #validation
   validates :first_name, presence: true, length:{maximum: 50} #first_name must exist and cannot exceed 50 characters
@@ -22,6 +24,14 @@ class User < ActiveRecord::Base
   private
   def create_remember_token
     self.remember_token = SecureRandom.urlsafe_base64
+  end
+
+  def create_code
+    self.confirm_code = SecureRandom.urlsafe_base64
+  end
+
+  def send_confirm(user)
+    UserMailer.new_user_confirmation(user).deliver
   end
 
 end

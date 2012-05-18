@@ -16,6 +16,19 @@ class UsersController < ApplicationController
 
   end
 
+  def confirm()
+    @user = User.find(params[:id])
+    if @user.confirm_code == params[:confirm_code]
+      @user.update_attribute('admin', true)
+      @user.update_attribute('confirm_code', '')
+      flash[:success] = "#{@user.first_name}, your account has been activated!"
+      redirect_to @user
+    else
+      flash[:warning] = "User confirmation unsuccessful"
+      redirect_to root_path
+    end
+  end
+
   def show
     @user = User.find(params[:id])
   end
