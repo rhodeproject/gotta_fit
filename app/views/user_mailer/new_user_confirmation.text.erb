@@ -3,7 +3,7 @@ Welcome <%= @user.first_name %>,
 Thank you for joining gotta fit!
 In order to activate your account, please follow the link below.
 
-http://localhost:3000<%= @user %>
+http://localhost:3000/user/<%= @user.id %>/confirm/<%= @user.confirm_code %>
 
 Thank you,
 gotta fit
