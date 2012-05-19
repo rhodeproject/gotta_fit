@@ -13,6 +13,9 @@
           <h4>
             <p>You account is Active</p>
           </h4>
+        <% if signed_in? %>
+           and signed in!
+        <% end %>
 
       </div>
   <%else%>

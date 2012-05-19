@@ -23,6 +23,7 @@ class UsersController < ApplicationController
       @user.update_attribute('active', true)
       @user.update_attribute('confirm_code', nil)
       flash[:success] = "#{@user.first_name}, your account has been activated!"
+      sign_in(@user)
       redirect_to @user
     else
       flash[:warning] = "User confirmation unsuccessful"

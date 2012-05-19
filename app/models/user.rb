@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   #callbacks
   before_save :create_remember_token
   before_save { |user| user.email = email.downcase}
-  after_save  { |user| send_confirm(user)}
+  after_create  { |user| send_confirm(user)}
 
   #validation
   validates :first_name, presence: true, length:{maximum: 50} #first_name must exist and cannot exceed 50 characters

@@ -1,3 +1,4 @@
+<div class="span12">
 <footer>
   <blockquote><p>'Till the roof comes off, till the lights go out'</p>
     <small><i>Marshall Bruce Mathers III</i></small>
@@ -5,7 +6,7 @@
   <nav>
     <ul>
       <li>
-        <%= link_to "Sign out", '#' %>
+        <%= link_to "Sign out", signout_path, method: "delete" %>
       </li>
       <li><%= link_to "About Us",   '#' %></li>
       <li><%= link_to "Contact", '#' %></li>
@@ -13,3 +14,4 @@
     </ul>
   </nav>
 </footer>
+</div>
