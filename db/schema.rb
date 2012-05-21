@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120520012838) do
+ActiveRecord::Schema.define(:version => 20120520190937) do
 
   create_table "slots", :force => true do |t|
     t.string   "date"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(:version => 20120520012838) do
     t.boolean  "waiting"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "spots"
+  end
+
+  create_table "slots_users", :id => false, :force => true do |t|
+    t.integer "slot_id"
+    t.integer "user_id"
   end
 
   create_table "users", :force => true do |t|

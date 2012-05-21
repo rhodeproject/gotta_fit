@@ -1,14 +1,17 @@
 
 <% if signed_in? %>
-
     <div class="row">
       <aside class="span3">
         <section>
-         User Info
+          <%= render 'shared/user_info' %>
         </section>
         <section>
-          User Stats
+          <%= render 'shared/stats' %>
         </section>
+        <section>
+          <%= render 'shared/ride_details' %>
+        </section>
+
       </aside>
       <div class="span9">
         <img src="/assets/pain_cave_banner.png"/>

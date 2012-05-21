@@ -1,20 +1,24 @@
-<% provide(:title, "Sign in") %>
+<% provide(:title, "New Session") %>
 <h1>Create New Rider Session</h1>
 
 <div class="row">
   <div class="span10 offset4">
-    <%= form_for @slots do |slot| %>
+    <%= form_for(@slot) do |f| %>
+        <%= render 'shared/errors' %>
+        <%= f.label :date %>
+        <%= f.text_field :date %>
 
-        <%= slot.label :date %>
-        <%= slot.text_field :date %>
+        <%= f.label :start_time %>
+        <%= f.text_field :start_time %>
 
-        <%= slot.label :start_time %>
-        <%= slot.text_field :start_time %>
+        <%= f.label :end_time %>
+        <%= f.text_field :end_time %>
 
-        <%= slot.label :end_time %>
-        <%= slot.text_field :end_time %>
+        <%= f.label :spots %>
+        <%= f.text_field :spots %>
         <br>
-        <%= slot.submit "Create", class: "btn btn-large btn-primary" %>
+        <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+
     <% end %>
   </div>
 </div>

@@ -7,9 +7,17 @@
 
 </h2>
 <% if !signed_in? %>
+    <%= link_to "Sign in!", '/signin', class: "btn btn-large btn-primary" %> or
+    <%= link_to "Sign up now!", '/signup', class: "btn btn-large btn-primary" %>
+<% else %>
+      <div class="span5 offset1">
+      <div class="btn-group" data-toggle="buttons-checkbox">
+        <button class="btn"><%= link_to "Multi-rider Sign Up", '/schedule' %></button>
+        <button class="btn">Do something</button>
+        <button class="btn">Do something else</button>
+      </div>
+      </div>
 
-<%= link_to "Sign in!", '/signin', class: "btn btn-large btn-primary" %> or
-<%= link_to "Sign up now!", '/signup', class: "btn btn-large btn-primary" %>
 <% end %>
 </div>
   <div class="row-fluid">

@@ -1,4 +1,4 @@
-
+<h1>Mutli-rider sessions</h1>
 <div class="container">
     <div class="span10 offset1">
         <table class="table table-condensed table-bordered table-striped">
@@ -14,8 +14,8 @@
                 <td><%= slot.date%></td>
                 <td><%= slot.start_time%></td>
                 <td><%= slot.end_time%></td>
-                <td>#</td>
-                <td><%= link_to 'Sign Up', '#', class: "btn btn-large btn-primary" %></td>
+                <td><%= spots_available(slot.id) %></td>
+                <td><%= link_to 'View Details', slot, class: "btn btn-large btn-primary" %></td>
               </tr>
           <% end %>
         </table>

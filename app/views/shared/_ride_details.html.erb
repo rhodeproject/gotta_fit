@@ -1,0 +1,12 @@
+
+<h3>Upcoming Rides</h3> <br>
+<% current_user.slots.each do |s| %>
+    <li>
+        <span class="content">
+          <%= s.date %>
+          <%= s.start_time %> to
+          <%= s.end_time %>
+        </span>
+    </li>
+<% end %>
+
