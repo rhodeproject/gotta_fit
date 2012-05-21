@@ -9,7 +9,10 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash["success"] = "Welcome #{@user.first_name}!"
-      redirect_to @user
+      redirect_to root_path
+    else
+      flash[:notice] = "There was an issue creating your account"
+      redirect_to root_path
     end
   end
 

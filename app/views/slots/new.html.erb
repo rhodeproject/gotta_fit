@@ -4,7 +4,7 @@
 <div class="row">
   <div class="span10 offset4">
     <%= form_for(@slot) do |f| %>
-        <%= render 'shared/errors' %>
+        <%= render 'shared/errors', object: f.object %>
         <%= f.label :date %>
         <%= f.text_field :date %>
 
