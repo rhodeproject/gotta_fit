@@ -17,4 +17,5 @@ group :development, :test do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
