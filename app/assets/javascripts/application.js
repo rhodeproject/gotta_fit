@@ -17,4 +17,5 @@
 
 $(function (){
     $('#slot_date').datepicker();
+
  });
