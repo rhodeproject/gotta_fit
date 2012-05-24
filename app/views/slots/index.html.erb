@@ -1,4 +1,4 @@
-<h1>Mutli-rider sessions</h1>
+<h1>Multi-rider sessions</h1>
 <div class="container">
     <div class="span10 offset1">
         <table class="table table-condensed table-bordered table-striped">
@@ -11,7 +11,7 @@
           </thead>
           <% @slots.each do |slot|%>
               <tr>
-                <td><%= slot.date%></td>
+                <td><%= showday(slot.date)%></td>
                 <td><%= slot.start_time%></td>
                 <td><%= slot.end_time%></td>
                 <td><%= spots_available(slot.id) %></td>

@@ -1,7 +1,4 @@
 module SlotsHelper
-  def slotdate(sdate)
-    DateTime.parse(sdate)
-  end
 
   def spots_available(id)
     slot = Slot.find(id)
@@ -9,4 +6,9 @@ module SlotsHelper
     slots_taken = slot.users.count
     slot_count - slots_taken
   end
+
+  def showday(sdate)
+    Date.strptime(sdate, '%m/%d/%Y' ).strftime('%A %m/%d/%Y')
+  end
+
 end

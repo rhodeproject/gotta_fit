@@ -5,6 +5,7 @@ gem 'pg'
 gem 'bootstrap-sass', '2.0.0'
 gem 'delayed_job_active_record'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'fullcalendar-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -49,7 +49,7 @@ class SlotsController < ApplicationController
   end
 
   def index
-    @slots = Slot.all
+    @slots = Slot.all(:order => "date, start_time DESC")
   end
 
   def show
