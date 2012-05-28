@@ -41,4 +41,15 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def update
+    flash[:success] = "Test"
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "#{@user.first_name} #{@user.last_name} has been removed!"
+    redirect_to users_path
+  end
 end

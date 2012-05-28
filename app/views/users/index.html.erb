@@ -15,7 +15,8 @@
           <td><%= user.last_name %></td>
           <td><%= user.email %></td>
           <td><%= time_ago_in_words(user.created_at) %></td>
-          <td><%= link_to "Edit", "#" %></td>
+          <td><%= link_to "Edit", user, :method => :update%> |
+            <%= link_to "Delete", user, :confirm => 'Are you sure?', :method => :delete%></td>
         </tr>
       <% end %>
     </table>
