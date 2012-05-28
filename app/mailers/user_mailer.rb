@@ -6,9 +6,11 @@ class UserMailer < ActionMailer::Base
     if Rails.env.development?
       address = "mhatch73@gmail.com"
       subject = "---Test--- Confirmation for user #{@user.email}"
+      @url = "http://localhost:3000"
     else
       address = @user.email
       subject = "TriFit Lab new user confirmation - #{@user.first_name} #{@user.last_name}"
+      @url = "http://gottafit.com"
     end
 
     mail(:to => address, :subject => subject)
@@ -17,12 +19,14 @@ class UserMailer < ActionMailer::Base
   def user_slot_sign_up(user, slot)
     @user = user
     @slot = slot
+
+
     if Rails.env.development?
       address = "mhatch73@gmail.com"
-      subject = "-----Test------ Muti-rider signup"
+      subject = "-----Test------ Multi-rider signup"
     else
       address = @user.email
-      subject = "TriFit Lab Muti-rider signup"
+      subject = "TriFit Lab Multi-rider signup"
     end
 
     mail(:to => address, :subject => subject)

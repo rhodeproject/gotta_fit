@@ -2,10 +2,8 @@ Welcome <%= @user.first_name %>,
 
 Thank you for joining gotta fit!
 In order to activate your account, please follow the link below.
-<% if Rails.env.development? %>
-    http://localhost:3000/user/<%= @user.id %>/confirm/<%= @user.confirm_code %>
-<% else %>
-    http://growing-journey-7032.herokuapp.com/user/<%= @user.id %>/confirm/<%= @user.confirm_code %>
-<% end %>
+
+http://<%= @url %>/user/<%= @user.id %>/confirm/<%= @user.confirm_code %>
+
 Thank you,
 gotta fit
