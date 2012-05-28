@@ -49,12 +49,23 @@ class SlotsController < ApplicationController
   end
 
   def index
-    @slots = Slot.all(:order => "date, start_time DESC")
+    if signed_in?
+      @slots = Slot.all(:order => "date, start_time DESC")
+    else
+      flash[:warning] = "You must be signed in to view sessions"
+      redirect_to root_path
+    end
   end
 
   def show
-    @slot = Slot.find(params[:id])
-    @riders = @slot.users
+    if signed_in?
+      @slot = Slot.find(params[:id])
+      @riders = @slot.users
+    else
+      flash[:warning] = "You must be signed in to view this!"
+      redirect_to root_path
+    end
+
   end
 
   private

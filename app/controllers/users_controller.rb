@@ -17,7 +17,11 @@ class UsersController < ApplicationController
   end
 
   def index
-
+    if signed_in? && current_user.admin?
+      @users = User.all
+    else
+      flash[:warning] = "You must be an administrator to perform this action"
+    end
   end
 
   def confirm()
