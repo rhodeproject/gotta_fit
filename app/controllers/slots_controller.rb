@@ -87,9 +87,9 @@ class SlotsController < ApplicationController
     end
   end
 
-  def signed_up?
-    @slot = Slot.find(params[:id])
-    @slot.users.where(:id => current_user.id).present?
-  end
+ # def signed_up?
+ #   @slot = Slot.find(params[:id])
+ #   @slot.users.where(:id => current_user.id).present?
+ # end
 
 end

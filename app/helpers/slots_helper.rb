@@ -11,4 +11,9 @@ module SlotsHelper
     Date.strptime(sdate, '%m/%d/%Y' ).strftime('%A %m/%d/%Y')
   end
 
+  def signed_up?
+    @slot = Slot.find(params[:id])
+    @slot.users.where(:id => current_user.id).present?
+  end
+
 end

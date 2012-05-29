@@ -8,20 +8,25 @@
       <thead>
         <th>Rider Number</th>
         <th>Name</th>
+        <th>email</th>
         <th>Confirmed</th>
     </thead>
       <% @riders.each_with_index do |r, i| %>
           <tr>
               <td><%= i + 1 %></td>
               <td><%= r.first_name %> <%= r.last_name %></td>
+              <td><%= r.email %></td>
               <td>#</td>
           </tr>
       <% end %>
     </table>
 
     <%= form_for @slot do |u|%>
-        <%= u.submit "Join Session", class: "btn btn-large btn-primary" %>
-        <%= u.submit "Leave Session", class:"btn btn-large btn-primary"  %>
+        <% if signed_up?%>
+            <%= u.submit "Leave Session", class:"btn btn-large btn-primary"  %>
+        <% else %>
+            <%= u.submit "Join Session", class: "btn btn-large btn-primary" %>
+        <% end %>
     <% end %>
 
   </div>
