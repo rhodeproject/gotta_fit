@@ -58,7 +58,8 @@ class SlotsController < ApplicationController
         when "daily"
           @slots = Slot.by_day Date.today
         else
-          @slots = Slot.all(:order => "date, start_time DESC")
+          @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time DESC')
+          #@slots = Slot.all(:order => "date, start_time DESC")
       end
 
     else

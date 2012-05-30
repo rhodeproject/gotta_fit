@@ -6,6 +6,12 @@
     <%= link_to 'Today', '/schedule/daily' %> |
     <%= link_to 'All', '/schedule' %>
   </div>
+  <div class="span4 offset1 pull-right">
+    <%= link_to 'Next Week', '/schedule/weekly' %> |
+    <%= link_to 'Next Month', '/schedule/monthly' %> |
+    <%= link_to 'Tomorrow', '/schedule/daily' %> |
+    <%= link_to 'All', '/schedule' %>
+  </div>
     <div class="span10 offset1">
         <table class="table table-condensed table-bordered table-striped">
           <thead>
@@ -21,14 +27,14 @@
                 <td><%= slot.start_time%></td>
                 <td><%= slot.end_time%></td>
                 <td><%= spots_available(slot.id) %></td>
-                <td><%= link_to 'View Details', slot, class: "btn btn-large btn-primary" %></td>
+                <td><%= link_to 'View Details', slot%></td>
               </tr>
           <% end %>
         </table>
-      <%=  %>
+      <%= will_paginate @slots %>
       <% if signed_in? && current_user.admin? %>
-        <%=  link_to "Create New Session",new_slot_path ,class: "btn btn-large btn-primary" %>
-    <% end %>
+          <%=  link_to "Create New Session",new_slot_path ,class: "btn btn-large btn-primary" %>
+      <% end %>
     </div>
 </div>
 
