@@ -1,5 +1,11 @@
 <h1>Multi-rider sessions</h1>
 <div class="container">
+  <div class="span4 offset1">
+    <%= link_to 'This Week', '/schedule/weekly' %> |
+    <%= link_to 'This Month', '/schedule/monthly' %> |
+    <%= link_to 'Today', '/schedule/daily' %> |
+    <%= link_to 'All', '/schedule' %>
+  </div>
     <div class="span10 offset1">
         <table class="table table-condensed table-bordered table-striped">
           <thead>
@@ -19,7 +25,8 @@
               </tr>
           <% end %>
         </table>
-    <% if signed_in? && current_user.admin? %>
+      <%=  %>
+      <% if signed_in? && current_user.admin? %>
         <%=  link_to "Create New Session",new_slot_path ,class: "btn btn-large btn-primary" %>
     <% end %>
     </div>

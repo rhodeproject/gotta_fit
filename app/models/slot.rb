@@ -16,11 +16,14 @@ class Slot < ActiveRecord::Base
   validates :end_time, :presence => true
   validate :spots, :presence => true
 
+  scope :by_week, lambda { |d| {:conditions =>  {:date => d.beginning_of_week..d.end_of_week}}}
+  scope :by_month, lambda { |d| {:conditions => {:date => d.beginning_of_week..d.end_of_week}}}
+
   private
 
   def convertdate(sdate)
     #DateTime.parse(sdate)
-    Date.strptime(sdate, '%m/%d/%Y').strftime('%m/%d/%Y')
+    Date.strptime(sdate, '%m/%d/%Y').strftime('%Y-%m-%d')
   end
 
   def converttime(stime)

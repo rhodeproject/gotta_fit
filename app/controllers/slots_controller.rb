@@ -26,7 +26,6 @@ class SlotsController < ApplicationController
         flash[:notice] = "You are not signed up"
         redirect_to @slot
       end
-
     end
   end
 
@@ -50,7 +49,18 @@ class SlotsController < ApplicationController
 
   def index
     if signed_in?
-      @slots = Slot.all(:order => "date, start_time DESC")
+
+      case params[:view]
+        when "weekly"
+          @slots = Slot.by_week Date.today
+        when "monthly"
+          @slots = Slot.by_month Date.today
+      #if params[:view] == "weekly"
+      #  @slots = Slot.by_week Date.today
+      else
+        @slots = Slot.all(:order => "date, start_time DESC")
+      end
+
     else
       flash[:warning] = "You must be signed in to view sessions"
       redirect_to root_path

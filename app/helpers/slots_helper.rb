@@ -8,7 +8,7 @@ module SlotsHelper
   end
 
   def showday(sdate)
-    Date.strptime(sdate, '%m/%d/%Y' ).strftime('%A %m/%d/%Y')
+    Date.strptime(sdate, '%Y-%m-%d' ).strftime('%A %m/%d/%Y')
   end
 
   def signed_up?

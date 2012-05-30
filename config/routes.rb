@@ -23,5 +23,6 @@ GottaFit::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/user/:id/confirm/:confirm_code', to:'users#confirm'
   match '/schedule',  to: 'slots#index'
+  match '/schedule/:view', to: 'slots#index'
 
 end
