@@ -4,10 +4,7 @@
     <list default="true" id="8ebce6a9-ef06-4422-a210-8cae1c21b533" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/slots_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/slots_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/slots_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/slots_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/slot.rb" afterPath="$PROJECT_DIR$/app/models/slot.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/slots/index.html.erb" afterPath="$PROJECT_DIR$/app/views/slots/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <ignored path="gotta_fit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/slots/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="47" selection-start="239" selection-end="239" vertical-scroll-proportion="0.21963824">
+            <state line="5" column="47" selection-start="239" selection-end="239" vertical-scroll-proportion="-3.2692308">
               <folding />
             </state>
           </provider>
@@ -41,7 +38,7 @@
       <file leaf-file-name="slots_helper.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/slots_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="32" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+            <state line="3" column="31" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -59,16 +56,16 @@
       <file leaf-file-name="slots_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/slots_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="43" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
+            <state line="58" column="52" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slot.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="slot.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/slot.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="96" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0">
+            <state line="20" column="59" selection-start="831" selection-end="831" vertical-scroll-proportion="0.49394673">
               <folding />
             </state>
           </provider>
@@ -99,10 +96,10 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/slots/show.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/slots_helper.rb" />
-        <option value="$PROJECT_DIR$/app/models/slot.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/slots_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/slots/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/slots_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/slot.rb" />
       </list>
     </option>
   </component>
@@ -672,20 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/slots_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="43" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/slot.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="96" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="44" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
@@ -693,16 +676,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/slots_helper.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/slots/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+        <state line="5" column="47" selection-start="239" selection-end="239" vertical-scroll-proportion="-3.2692308">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/slots/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/slots_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="47" selection-start="239" selection-end="239" vertical-scroll-proportion="0.21963824">
+        <state line="3" column="31" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/slots_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="52" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/slot.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="59" selection-start="831" selection-end="831" vertical-scroll-proportion="0.49394673">
           <folding />
         </state>
       </provider>

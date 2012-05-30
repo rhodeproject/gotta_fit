@@ -18,7 +18,7 @@ class Slot < ActiveRecord::Base
 
   scope :by_week, lambda { |d| {:conditions =>  {:date => d.beginning_of_week..d.end_of_week}}}
   scope :by_month, lambda { |d| {:conditions => {:date => d.beginning_of_week..d.end_of_week}}}
-
+  scope :by_day, lambda {|d| {:conditions => {:date => d}}}
   private
 
   def convertdate(sdate)

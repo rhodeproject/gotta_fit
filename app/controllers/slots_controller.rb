@@ -49,16 +49,16 @@ class SlotsController < ApplicationController
 
   def index
     if signed_in?
-
+      #Detemine the View for Slots Monthly, Weekly, or Daily
       case params[:view]
         when "weekly"
           @slots = Slot.by_week Date.today
         when "monthly"
           @slots = Slot.by_month Date.today
-      #if params[:view] == "weekly"
-      #  @slots = Slot.by_week Date.today
-      else
-        @slots = Slot.all(:order => "date, start_time DESC")
+        when "daily"
+          @slots = Slot.by_day Date.today
+        else
+          @slots = Slot.all(:order => "date, start_time DESC")
       end
 
     else
