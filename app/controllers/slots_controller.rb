@@ -52,11 +52,11 @@ class SlotsController < ApplicationController
       #Detemine the View for Slots Monthly, Weekly, or Daily
       case params[:view]
         when "weekly"
-          @slots = Slot.by_week Date.today
+          @slots = Slot.paginate(page: params[:page], :per_page => 7).by_week Date.today
         when "monthly"
-          @slots = Slot.by_month Date.today
+          @slots = Slot.paginate(page: params[:page], :per_page => 7).by_month Date.today
         when "daily"
-          @slots = Slot.by_day Date.today
+          @slots = Slot.paginate(page: params[:page], :per_page => 7).by_day Date.today
         else
           @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time DESC')
           #@slots = Slot.all(:order => "date, start_time DESC")
