@@ -25,7 +25,7 @@ module SlotsHelper
   end
 
   def user_rides(user)
-    user.slots(:conditions => ['date >= >', Date.today]).order('date, start_time ASC')
+    user.slots(:conditions => ['date >= ?', Date.today]).order('date, start_time ASC')
   end
 
   def signed_up?
