@@ -24,6 +24,10 @@ module SlotsHelper
     user.slots.count(:conditions => ["date >= ?", Date.today])
   end
 
+  def user_rides(user)
+    user.slots(:conditions => ['date >= >', Date.today]).order('date, start_time ASC')
+  end
+
   def signed_up?
     @slot = Slot.find(params[:id])
     @slot.users.where(:id => current_user.id).present?

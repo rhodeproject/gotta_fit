@@ -4,7 +4,6 @@
     <list default="true" id="8ebce6a9-ef06-4422-a210-8cae1c21b533" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/slots_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/slots_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_stats.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_stats.html.erb" />
     </list>
     <ignored path="gotta_fit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,19 +98,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_stats.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_stats.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/shared/_stats.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="73" selection-start="189" selection-end="189" vertical-scroll-proportion="0.18836565">
+            <state line="4" column="73" selection-start="189" selection-end="189" vertical-scroll-proportion="-2.6153846">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_ride_details.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_ride_details.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/shared/_ride_details.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="32" selection-start="100" selection-end="100" vertical-scroll-proportion="-2.6153846">
+            <state line="3" column="26" selection-start="57" selection-end="57" vertical-scroll-proportion="0.14127424">
               <folding />
             </state>
           </provider>
@@ -129,7 +128,7 @@
       <file leaf-file-name="slots_helper.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/slots_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="45" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
+            <state line="27" column="17" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -161,9 +160,9 @@
         <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
         <option value="$PROJECT_DIR$/app/models/slot.rb" />
         <option value="$PROJECT_DIR$/app/controllers/slots_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" />
-        <option value="$PROJECT_DIR$/app/helpers/slots_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/shared/_stats.html.erb" />
+        <option value="$PROJECT_DIR$/app/helpers/slots_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" />
       </list>
     </option>
   </component>
@@ -885,13 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/slots_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="45" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -899,16 +891,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_ride_details.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_stats.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="32" selection-start="100" selection-end="100" vertical-scroll-proportion="-2.6153846">
+        <state line="4" column="73" selection-start="189" selection-end="189" vertical-scroll-proportion="-2.6153846">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_stats.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/slots_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="73" selection-start="189" selection-end="189" vertical-scroll-proportion="0.18836565">
+        <state line="27" column="17" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_ride_details.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="26" selection-start="57" selection-end="57" vertical-scroll-proportion="0.14127424">
           <folding />
         </state>
       </provider>
