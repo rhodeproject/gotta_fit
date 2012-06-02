@@ -15,6 +15,15 @@ module SlotsHelper
 
     Time.strptime(stime, '%H:%M').strftime('%l:%M %p')
   end
+
+  def rides_completed(user)
+    user.slots.count(:conditions => ["date < ?", Date.today])
+  end
+
+  def rides_upcoming(user)
+    user.slots.count(:conditions => ["date >= ?", Date.today])
+  end
+
   def signed_up?
     @slot = Slot.find(params[:id])
     @slot.users.where(:id => current_user.id).present?
