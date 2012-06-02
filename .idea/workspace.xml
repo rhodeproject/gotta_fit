@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ebce6a9-ef06-4422-a210-8cae1c21b533" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_mailer/new_user_notice.text.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/user_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
     </list>
     <ignored path="gotta_fit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,26 +45,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.8846154">
-              <folding>
-                <marker date="1337395920480" expanded="true" signature="56:682" placeholder="..." />
-                <marker date="1337395920480" expanded="true" signature="80:174" placeholder="..." />
-                <marker date="1337395920480" expanded="true" signature="94:163" placeholder="..." />
-                <marker date="1337395920480" expanded="true" signature="105:148" placeholder="..." />
-                <marker date="1337395920480" expanded="true" signature="225:384" placeholder="..." />
-                <marker date="1337395920480" expanded="true" signature="241:298" placeholder="..." />
-                <marker date="1337395920480" expanded="true" signature="421:663" placeholder="..." />
-                <marker date="1337395920480" expanded="true" signature="453:650" placeholder="..." />
-                <marker date="1337395920480" expanded="true" signature="465:637" placeholder="..." />
-                <marker date="1337395920480" expanded="true" signature="478:624" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,25 +57,8 @@
       <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="65" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0">
+            <state line="11" column="47" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding>
-                <marker date="1337618908750" expanded="true" signature="41:463" placeholder="..." />
-                <marker date="1337618908750" expanded="true" signature="69:324" placeholder="..." />
-                <marker date="1337618908750" expanded="true" signature="87:149" placeholder="..." />
-                <marker date="1337618908750" expanded="true" signature="167:225" placeholder="..." />
-                <marker date="1337618908750" expanded="true" signature="243:308" placeholder="..." />
-                <marker date="1337618908750" expanded="true" signature="350:452" placeholder="..." />
-                <marker date="1337618908750" expanded="true" signature="507:599" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -106,10 +72,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_ride_details.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_ride_details.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/shared/_ride_details.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="9" selection-start="386" selection-end="386" vertical-scroll-proportion="0.61218834">
+            <state line="14" column="9" selection-start="386" selection-end="386" vertical-scroll-proportion="-8.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_mailer.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="97" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_user_notice.text.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/user_mailer/new_user_notice.text.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="14" selection-start="216" selection-end="216" vertical-scroll-proportion="0.5271318">
               <folding />
             </state>
           </provider>
@@ -146,12 +130,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/slots/new.html.erb" />
-        <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120602094814_slots_change_start_time_data_type.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120602094926_slots_change_end_time_data_type.rb" />
         <option value="$PROJECT_DIR$/app/views/slots/show.html.erb" />
@@ -162,6 +143,9 @@
         <option value="$PROJECT_DIR$/app/views/shared/_stats.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/slots_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
+        <option value="$PROJECT_DIR$/app/views/user_mailer/new_user_notice.text.erb" />
       </list>
     </option>
   </component>
@@ -293,26 +277,8 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gotta_fit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gotta_fit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static_pages" />
+              <option name="myItemId" value="user_mailer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -333,28 +299,6 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gotta_fit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gotta_fit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -384,25 +328,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gotta_fit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gotta_fit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="mailers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -718,7 +644,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22646104" sideWeight="0.24378882" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18181819" sideWeight="0.6708075" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2215909" sideWeight="0.6708075" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22646104" sideWeight="0.5993789" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -788,16 +714,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/new_user_confirmation.text.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="9" selection-start="221" selection-end="221" vertical-scroll-proportion="0.22704507" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -828,13 +744,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1337618908750" expanded="true" signature="41:463" placeholder="..." />
-            <marker date="1337618908750" expanded="true" signature="69:324" placeholder="..." />
-            <marker date="1337618908750" expanded="true" signature="87:149" placeholder="..." />
-            <marker date="1337618908750" expanded="true" signature="167:225" placeholder="..." />
-            <marker date="1337618908750" expanded="true" signature="243:308" placeholder="..." />
-            <marker date="1337618908750" expanded="true" signature="350:452" placeholder="..." />
-            <marker date="1337618908750" expanded="true" signature="507:599" placeholder="..." />
+            <marker date="1337618908750" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337618908750" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337618908750" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337618908750" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337618908750" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337618908750" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337618908750" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -843,16 +759,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.8846154">
           <folding>
-            <marker date="1337395920480" expanded="true" signature="56:682" placeholder="..." />
-            <marker date="1337395920480" expanded="true" signature="80:174" placeholder="..." />
-            <marker date="1337395920480" expanded="true" signature="94:163" placeholder="..." />
-            <marker date="1337395920480" expanded="true" signature="105:148" placeholder="..." />
-            <marker date="1337395920480" expanded="true" signature="225:384" placeholder="..." />
-            <marker date="1337395920480" expanded="true" signature="241:298" placeholder="..." />
-            <marker date="1337395920480" expanded="true" signature="421:663" placeholder="..." />
-            <marker date="1337395920480" expanded="true" signature="453:650" placeholder="..." />
-            <marker date="1337395920480" expanded="true" signature="465:637" placeholder="..." />
-            <marker date="1337395920480" expanded="true" signature="478:624" placeholder="..." />
+            <marker date="1337395920480" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337395920480" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337395920480" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337395920480" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337395920480" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337395920480" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337395920480" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337395920480" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337395920480" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1337395920480" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -862,11 +778,6 @@
         <state line="8" column="73" selection-start="261" selection-end="261" vertical-scroll-proportion="-5.230769">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="65" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/slots_controller.rb">
@@ -906,7 +817,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/_ride_details.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="9" selection-start="386" selection-end="386" vertical-scroll-proportion="0.61218834">
+        <state line="14" column="9" selection-start="386" selection-end="386" vertical-scroll-proportion="-8.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="47" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="97" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/new_user_notice.text.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="14" selection-start="216" selection-end="216" vertical-scroll-proportion="0.5271318">
           <folding />
         </state>
       </provider>

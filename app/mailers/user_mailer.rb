@@ -16,6 +16,12 @@ class UserMailer < ActionMailer::Base
     mail(:to => address, :subject => subject)
   end
 
+  def new_user_notice(user)
+    @user = user
+    @count = User.count
+    mail(:to => "matthew.hatch@rhodeproject.com", :subject => "Another User -- #{@user.first_name}")
+  end
+
   def user_slot_sign_up(user, slot)
     @user = user
     @slot = slot
