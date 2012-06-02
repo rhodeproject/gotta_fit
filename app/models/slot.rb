@@ -17,7 +17,7 @@ class Slot < ActiveRecord::Base
   validate :spots, :presence => true
 
   scope :by_week, lambda { |d| {:conditions =>  {:date => d.beginning_of_week..d.end_of_week}}}
-  scope :by_month, lambda { |d| {:conditions => {:date => d.beginning_of_week..d.end_of_week}}}
+  scope :by_month, lambda { |d| {:conditions => {:date => d.beginning_of_month..d.end_of_month}}}
   scope :by_day, lambda {|d| {:conditions => {:date => d}}}
   private
 
@@ -27,6 +27,6 @@ class Slot < ActiveRecord::Base
   end
 
   def converttime(stime)
-    (Time.parse stime).strftime('%I:%M %p')
+    (Time.parse stime).strftime('%I:%M')
   end
 end

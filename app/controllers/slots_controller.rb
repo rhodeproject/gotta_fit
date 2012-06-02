@@ -52,13 +52,13 @@ class SlotsController < ApplicationController
       #Detemine the View for Slots Monthly, Weekly, or Daily
       case params[:view]
         when "weekly"
-          @slots = Slot.paginate(page: params[:page], :per_page => 7).by_week Date.today
+          @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time ASC').by_week Date.today
         when "monthly"
-          @slots = Slot.paginate(page: params[:page], :per_page => 7).by_month Date.today
+          @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time ASC').by_month Date.today
         when "daily"
-          @slots = Slot.paginate(page: params[:page], :per_page => 7).by_day Date.today
+          @slots = Slot.paginate(page: params[:page], :per_page => 7).order('start_time ASC').by_day Date.today
         else
-          @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time DESC')
+          @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time ASC')
           #@slots = Slot.all(:order => "date, start_time DESC")
       end
 
@@ -85,7 +85,7 @@ class SlotsController < ApplicationController
     @slot = Slot.find(params[:id])
     if @slot.users << current_user
       UserMailer.user_slot_sign_up(current_user,@slot).deliver
-      flash[:success] = "Added to Muti-rider session for #{@slot.date} at #{@slot.start_time}"
+      flash[:success] = "You have benn added to Muti-rider session!"
     else
       flash[:waring] = "There was an issue adding you to the Muti-rider session"
     end

@@ -1,12 +1,17 @@
 
 <h3>Upcoming Rides</h3> <br>
+
 <% current_user.slots.each do |s| %>
     <li>
         <span class="content">
-          <%= s.date %>
-          <%= s.start_time %> to
-          <%= s.end_time %>
+
+         <%= showday(s.date) %>
+         <ul>
+         <li>start time: <%= showtime(s.start_time) %></li>
+         <li>end time: <%= showtime(s.end_time) %></li>
+         </ul>
         </span>
     </li>
 <% end %>
+
 

@@ -13,7 +13,7 @@
     <%= link_to 'All', '/schedule' %>
   </div>
     <div class="span10 offset1">
-        <table class="table table-condensed table-bordered table-striped">
+        <table class="table table-condensed table-striped">
           <thead>
           <th>Day</th>
           <th>Start Time</th>
@@ -24,8 +24,8 @@
           <% @slots.each do |slot|%>
               <tr>
                 <td><%= showday(slot.date)%></td>
-                <td><%= slot.start_time%></td>
-                <td><%= slot.end_time%></td>
+                <td><%= showtime(slot.start_time)%></td>
+                <td><%= showtime(slot.end_time)%></td>
                 <td><%= spots_available(slot.id) %></td>
                 <td><%= link_to 'View Details', slot%></td>
               </tr>
