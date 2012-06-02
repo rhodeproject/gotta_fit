@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ebce6a9-ef06-4422-a210-8cae1c21b533" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/slots_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/slots_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" />
     </list>
     <ignored path="gotta_fit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,10 +106,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_ride_details.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_ride_details.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/shared/_ride_details.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="26" selection-start="57" selection-end="57" vertical-scroll-proportion="-1.9615384">
+            <state line="14" column="9" selection-start="386" selection-end="386" vertical-scroll-proportion="0.61218834">
               <folding />
             </state>
           </provider>
@@ -124,10 +124,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slots_helper.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="slots_helper.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/slots_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="41" selection-start="603" selection-end="603" vertical-scroll-proportion="0.86821705">
+            <state line="27" column="41" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,8 +160,8 @@
         <option value="$PROJECT_DIR$/app/models/slot.rb" />
         <option value="$PROJECT_DIR$/app/controllers/slots_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/shared/_stats.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/slots_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" />
       </list>
     </option>
   </component>
@@ -897,16 +897,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_ride_details.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/slots_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="26" selection-start="57" selection-end="57" vertical-scroll-proportion="-1.9615384">
+        <state line="27" column="41" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/slots_helper.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_ride_details.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="41" selection-start="603" selection-end="603" vertical-scroll-proportion="0.86821705">
+        <state line="14" column="9" selection-start="386" selection-end="386" vertical-scroll-proportion="0.61218834">
           <folding />
         </state>
       </provider>
