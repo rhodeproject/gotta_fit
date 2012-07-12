@@ -1,5 +1,11 @@
 GottaFit::Application.routes.draw do
 
+  get "wait_lists/new"
+
+  get "wait_lists/edit"
+
+  get "wait_lists/index"
+
   get "slots/new"
 
   get "slots/edit"

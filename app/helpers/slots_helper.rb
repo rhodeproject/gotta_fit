@@ -3,8 +3,18 @@ module SlotsHelper
   def spots_available(id)
     slot = Slot.find(id)
     slot_count = slot.spots
-    slots_taken = slot.users.count
+    slots_taken = slot.lists.where(:state => "Signed Up").count
     slot_count - slots_taken
+  end
+
+  def waiting_list_count(id)
+    slot = Slot.find(id)
+    slot.lists.where(:state => "Waiting").count
+  end
+
+  def get_slot_state(user)
+    list = user.lists.find_by_slot_id(params[:id])
+    list.state
   end
 
   def showday(sdate)
@@ -12,7 +22,6 @@ module SlotsHelper
   end
 
   def showtime(stime)
-
     Time.strptime(stime, '%H:%M').strftime('%l:%M %p')
   end
 
@@ -25,7 +34,7 @@ module SlotsHelper
   end
 
   def user_rides(user)
-    user.slots(:conditions => ['date >= ?', Date.today]).order('date, start_time ASC')
+    user.slots(:conditions => ['date >= ? ', Date.today]).order('date, start_time ASC')
   end
 
   def signed_up?

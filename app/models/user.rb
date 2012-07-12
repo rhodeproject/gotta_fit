@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessible :admin, :email, :first_name, :last_name, :password, :password_confirmation
   has_secure_password
-  has_and_belongs_to_many  :slots
+  #has_and_belongs_to_many  :slots
+  has_many :lists
+  has_many :slots, :through => :lists
 
   #constants
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -29,5 +31,21 @@ class User < ActiveRecord::Base
   def send_confirm(user)
     UserMailer.new_user_confirmation(user).deliver
   end
-
 end
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer         not null, primary key
+#  first_name      :string(255)
+#  last_name       :string(255)
+#  email           :string(255)
+#  password_digest :string(255)
+#  remember_token  :string(255)
+#  admin           :boolean         default(FALSE)
+#  active          :boolean         default(FALSE)
+#  created_at      :datetime        not null
+#  updated_at      :datetime        not null
+#  confirm_code    :string(255)
+#
+

@@ -1,7 +1,7 @@
 <h1>All Users</h1>
 <div class="container">
   <div class="span10 offset1">
-    <table class="table table-condensed table-striped">
+    <table id="tblUsers" class="table table-condensed table-striped">
       <thead>
           <th>First Name</th>
           <th>Last Name</th>
@@ -9,6 +9,7 @@
           <th>Joined</th>
           <th>Edit User</th>
       </thead>
+      <tbody>
       <% @users.each do |user| %>
         <tr>
           <td><%= user.first_name %></td>
@@ -19,6 +20,7 @@
             <%= link_to "Delete", user, :confirm => 'Are you sure?', :method => :delete%></td>
         </tr>
       <% end %>
+      </tbody>
     </table>
     <%= will_paginate @users %>
   </div>

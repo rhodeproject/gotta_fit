@@ -5,7 +5,7 @@
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Multi-rider Sessions", '/schedule' %></li>
+          <li><%= link_to "Multi-rider Sessions", '/schedule/weekly' %></li>
 
           <% if signed_in? %>
             <% if current_user.admin? %>

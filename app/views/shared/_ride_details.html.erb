@@ -1,9 +1,6 @@
-
 <h3>Upcoming Rides</h3> <br>
-
 <% user_rides(current_user).each do |s| %>
     <% if s.date.to_date.future? || s.date.to_date.today?%>
-    <li>
         <span class="content">
          <%= showday(s.date) %>
          <ul>
@@ -11,7 +8,6 @@
          <li>end time: <%= showtime(s.end_time) %></li>
          </ul>
         </span>
-    </li>
    <% end %>
 <% end %>
 

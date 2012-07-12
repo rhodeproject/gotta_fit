@@ -13,10 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.datepicker
+//= require dataTables/jquery.dataTables
 //= require_tree .
 
-$(function (){
-    $('#slot_date').datepicker();
- });
 
 

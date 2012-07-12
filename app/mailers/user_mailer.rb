@@ -1,6 +1,19 @@
 class UserMailer < ActionMailer::Base
   default from: "therhodeproject@gmail.com"
 
+  def wait_list_notice(user, slot)
+    if Rails.env.development?
+      address = "mhatch73@gmail.com"
+      subject = "---Test--- TriFit Lab - A spot has opened up!"
+    else
+      address = @user.email
+      subject = "TriFit Lab - A spot has opened up!"
+    end
+    @user = user
+    @slot = slot
+    mail(:to => address, :subject => subject)
+  end
+
   def new_user_confirmation(user)
     @user = user
     if Rails.env.development?
@@ -25,8 +38,6 @@ class UserMailer < ActionMailer::Base
   def user_slot_sign_up(user, slot)
     @user = user
     @slot = slot
-
-
     if Rails.env.development?
       address = "mhatch73@gmail.com"
       subject = "-----Test------ Multi-rider signup"

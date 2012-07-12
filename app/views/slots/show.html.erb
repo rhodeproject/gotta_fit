@@ -9,14 +9,14 @@
         <th>Rider Number</th>
         <th>Name</th>
         <th>email</th>
-        <th>Confirmed</th>
+        <th>Status</th>
     </thead>
       <% @riders.each_with_index do |r, i| %>
           <tr>
               <td><%= i + 1 %></td>
               <td><%= r.first_name %> <%= r.last_name %></td>
               <td><%= r.email %></td>
-              <td>#</td>
+              <td><%= get_slot_state(r) %></td>
           </tr>
       <% end %>
     </table>
@@ -25,7 +25,11 @@
         <% if signed_up?%>
             <%= u.submit "Leave Session", class:"btn btn-large btn-primary"  %>
         <% else %>
-            <%= u.submit "Join Session", class: "btn btn-large btn-primary" %>
+            <% if spots_available(@slot.id) == 0 %>
+                <%= u.submit "Join Waiting List", class: "btn btn-large btn-primary" %>
+            <% else %>
+                <%= u.submit "Join Session", class: "btn btn-large btn-primary" %>
+            <% end %>
         <% end %>
     <% end %>
 
