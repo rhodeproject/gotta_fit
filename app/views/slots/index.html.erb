@@ -7,8 +7,8 @@
           <th>Day</th>
           <th>Start Time</th>
           <th>End Time</th>
-          <th>Spots</th>
-          <th>Riders</th>
+          <th>Total Spots</th>
+          <th>Spots Available</th>
           <th>Waiting</th>
           <th></th>
           </thead>
@@ -17,8 +17,8 @@
                 <td><%= showday(slot.date)%></td>
                 <td><%= showtime(slot.start_time)%></td>
                 <td><%= showtime(slot.end_time)%></td>
-                <td><%= spots_available(slot.id) %></td>
                 <td><%= slot.spots %></td>
+                <td><%= spots_available(slot.id) %></td>
                 <td><%= waiting_list_count(slot.id) %></td>
                 <td><%= link_to 'View Details', slot%></td>
               </tr>

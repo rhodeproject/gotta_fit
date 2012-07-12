@@ -2,75 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ebce6a9-ef06-4422-a210-8cae1c21b533" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/slots.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/users.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/slots/_menu.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_mailer/wait_list_notice.text.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/integration/users_integration_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/minitest_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/model/user_test.rb" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\application-032d41acfdedc961e0a98f0757fce3dc.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\application-032d41acfdedc961e0a98f0757fce3dc.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\application-76d3256687c998cba0e9e61ed4d2278e.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\application-76d3256687c998cba0e9e61ed4d2278e.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\application.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\application.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\application.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\application.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\glyphicons-halflings-0e7ff93d8f48fe1f5f762e4312e78da7.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\glyphicons-halflings-white-ef3d5b8d6a297804352b4a46fdb5466d.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\glyphicons-halflings-white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\glyphicons-halflings.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_flat_0_aaaaaa_40x100-a1eb3e0764573ed4b261ca742ed96ac3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_flat_75_ffffff_40x100-841636c8f8d33987bb8d2f31e8ef92ca.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_glass_55_fbf9ee_1x400-bbb04adbe79f471d8c88a2bc691231b6.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_glass_65_ffffff_1x400-a30aa544902182c133dbb46ac40a08d2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_glass_75_dadada_1x400-38ed9f33e066d6bee977c567d4b03650.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_glass_75_dadada_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_glass_75_e6e6e6_1x400-3e20bce1b7b2f5dd47ca6ac361805162.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_glass_95_fef1ec_1x400-c723e9a2b50006c6054836a10b76bb84.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_highlight-soft_75_cccccc_1x100-081f36ef02c9233c6db45d2d566fbecd.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-icons_222222_256x240-1bca65a97a49d7d05ab2f3dc83b97cd5.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-icons_222222_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-icons_2e83ff_256x240-efb394f4417cc6bd4177a1999474e1eb.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-icons_454545_256x240-17e6740beb176dd87da44be76c94bb47.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-icons_454545_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-icons_888888_256x240-5b928d6b862809eb8130d7b7e0b51a1d.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-icons_888888_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-icons_cd0a0a_256x240-635d34cf8bf22d711a729017ab9aaebe.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\jquery-ui\ui-icons_cd0a0a_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\manifest.yml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\pain_cave_banner-06d7e8732d099682d5f62f3405f516d6.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\pain_cave_banner.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\rails-be8732dac73d845ac5b142c8fb5f9fb0.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\gotta_fit\public\assets\rails.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\gotta_fit\spec\models\wait_list_spec.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gotta_fit.iml" afterPath="$PROJECT_DIR$/.idea/gotta_fit.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/slots.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/slots.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/slots_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/slots_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/slots_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/slots_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/user_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/slot.rb" afterPath="$PROJECT_DIR$/app/models/slot.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/slots/index.html.erb" afterPath="$PROJECT_DIR$/app/views/slots/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/slots/show.html.erb" afterPath="$PROJECT_DIR$/app/views/slots/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/slot_spec.rb" afterPath="$PROJECT_DIR$/spec/models/slot_spec.rb" />
     </list>
     <ignored path="gotta_fit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,7 +30,16 @@
       <file leaf-file-name="user_test.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/model/user_test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="58" selection-start="93" selection-end="348" vertical-scroll-proportion="0.0">
+            <state line="11" column="11" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/slots/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="20" selection-start="320" selection-end="320" vertical-scroll-proportion="0.27937916">
               <folding />
             </state>
           </provider>
@@ -119,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="minitest_helper.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="minitest_helper.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/minitest_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="193" selection-end="193" vertical-scroll-proportion="0.17819707">
+            <state line="5" column="0" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -150,7 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/slots_controller.rb" />
         <option value="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
         <option value="$PROJECT_DIR$/app/views/user_mailer/wait_list_notice.text.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
@@ -166,6 +109,7 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/test/integration/users_integration_test.rb" />
         <option value="$PROJECT_DIR$/test/minitest_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/slots/index.html.erb" />
       </list>
     </option>
   </component>
@@ -208,6 +152,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -289,6 +243,46 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gotta_fit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gotta_fit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slots" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gotta_fit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gotta_fit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -302,25 +296,15 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="web.server" />
     <property name="recentsLimit" value="5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.lastSelected" value="web.server" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -460,6 +444,15 @@
         <option name="RakeTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method>
+        <option name="RakeTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="" />
@@ -487,15 +480,6 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
-      <method>
-        <option name="RakeTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
-      <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSRemoteDebuggerConfigurationSettings>
       <method>
         <option name="RakeTask" enabled="false" />
       </method>
@@ -590,11 +574,11 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="1" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="2" class="java.lang.String" itemvalue="Rails.Production: gotta_fit" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Development: gotta_fit" />
-      <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in: spec" />
+      <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in: spec" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="3" class="java.lang.String" itemvalue="Rails.Production: gotta_fit" />
+      <item index="4" class="java.lang.String" itemvalue="Rails.Development: gotta_fit" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -632,11 +616,11 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22646104" sideWeight="0.7795031" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21753247" sideWeight="0.7795031" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2215909" sideWeight="0.7795031" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29037267" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22646104" sideWeight="0.7795031" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2204969" sideWeight="0.67126626" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2204969" sideWeight="0.32305196" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2204969" sideWeight="0.32305196" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -704,118 +688,86 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/views/slots/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="77" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/slots/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="24" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="22" column="77" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/slots_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="10" selection-start="2655" selection-end="2655" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="91" column="10" selection-start="2655" selection-end="2655" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="11" column="40" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/slots.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.111597374">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.111597374" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/users.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="229" selection-end="229" vertical-scroll-proportion="0.111597374">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="229" selection-end="229" vertical-scroll-proportion="0.111597374" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/slots.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="229" selection-end="229" vertical-scroll-proportion="0.111597374">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="229" selection-end="229" vertical-scroll-proportion="0.111597374" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="68" selection-start="99" selection-end="142" vertical-scroll-proportion="-1.9615384">
-          <folding />
-        </state>
+        <state line="3" column="68" selection-start="99" selection-end="142" vertical-scroll-proportion="-1.9615384" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="8" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="19" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/slots.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="21" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#157#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="9" column="21" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="16" selection-start="517" selection-end="517" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="21" column="16" selection-start="517" selection-end="517" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/model/user_test.rb">
+    <entry file="file://$PROJECT_DIR$/test/minitest_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="58" selection-start="93" selection-end="348" vertical-scroll-proportion="0.0">
+        <state line="5" column="0" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="23" column="0" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/integration/users_integration_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="36" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+        <state line="6" column="36" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/model/user_test.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="11" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/minitest_helper.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/slots/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="193" selection-end="193" vertical-scroll-proportion="0.17819707">
+        <state line="10" column="20" selection-start="320" selection-end="320" vertical-scroll-proportion="0.27937916">
           <folding />
         </state>
       </provider>
