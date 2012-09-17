@@ -3,21 +3,13 @@
 <div class="center hero-unit">
 <h1>Tri Fit Lab</h1>
 <h2>
-  Welcome to the Tri Fit Lab's Multi-rider Sign-up<br><br>
-
+  Welcome to the Tri Fit Lab's Multi-rider Sign-up<br>
 </h2>
 <% if !signed_in? %>
-    <%= link_to "Sign in!", '/signin', class: "btn btn-large btn-primary" %> or
-    <%= link_to "Sign up now!", '/signup', class: "btn btn-large btn-primary" %>
-<% else %>
-      <div class="span5 offset1">
-      <div class="btn-group" data-toggle="buttons-checkbox">
-        <button class="btn"><%= link_to "Multi-rider Sign Up", '/schedule' %></button>
-        <button class="btn">TT Bike Fit</button>
-        <button class="btn">Indoor Time Trial</button>
-      </div>
-      </div>
-
+    <div class="span5 offset3">
+        <%= link_to "Sign in!", '/signin', id: "btnLoginMain", class: "btn btn-primary" %> or
+        <%= link_to "Sign up!", '/signup', class: "btn btn-primary" %>
+    </div>
 <% end %>
 </div>
   <div class="row-fluid">
@@ -25,7 +17,7 @@
       <div class="span4">
         <h2>Who are we?</h2>
         <p>TriFitLab is the go-to spot for Rhode Island and Massachusetts Triathletes,
-          Time trialists, and cyclists, brought to you by <%= link_to 'TTBikeFit', 'www.ttbikefit.com' %>.
+          Time trialists, and cyclists, brought to you by <%= link_to 'TTBikeFit', 'http://www.ttbikefit.com' %>.
         </p>
       </div><!--/span-->
       <div class="span4">
@@ -43,3 +35,6 @@
       </div><!--/span-->
     </div><!--/row-->
   </div>
+<div id="frmLogin" title="Login">
+  <%= render 'shared/login' %>
+</div>

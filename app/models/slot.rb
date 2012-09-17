@@ -1,6 +1,18 @@
+# == Schema Information
+#
+# Table name: slots
+#
+#  id         :integer         not null, primary key
+#  date       :string(255)
+#  start_time :string(255)
+#  end_time   :string(255)
+#  waiting    :boolean
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#  spots      :integer
+#
 class Slot < ActiveRecord::Base
   attr_accessible :date, :end_time, :start_time, :waiting, :spots
-  #has_and_belongs_to_many  :users
   has_many  :lists
   has_many  :users, :through => :lists
 
@@ -16,7 +28,8 @@ class Slot < ActiveRecord::Base
   validates :date, :presence => true
   validates :start_time, :presence =>  true
   validates :end_time, :presence => true
-  validate :spots, :presence => true
+  validates :spots, :presence => true
+  validates :date, :uniqueness => {:scope => [:start_time, :end_time]}
 
   scope :by_week, lambda { |d| {:conditions =>  {:date => d.beginning_of_week..d.end_of_week}}}
   scope :by_month, lambda { |d| {:conditions => {:date => d.beginning_of_month..d.end_of_month}}}
@@ -32,20 +45,8 @@ class Slot < ActiveRecord::Base
   end
 
   def converttime(stime)
-    (Time.parse stime).strftime('%I:%M')
+    (Time.parse stime).strftime('%H:%M:%S')
   end
 end
-# == Schema Information
-#
-# Table name: slots
-#
-#  id         :integer         not null, primary key
-#  date       :string(255)
-#  start_time :string(255)
-#  end_time   :string(255)
-#  waiting    :boolean
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#  spots      :integer
-#
+
 

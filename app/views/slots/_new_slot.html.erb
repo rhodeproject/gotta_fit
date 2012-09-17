@@ -1,0 +1,22 @@
+<div class="row" id="new_slot" title="New Session">
+  <div id="session_date" class="span2">
+    <%= form_for(@slot) do |f| %>
+        <%= render 'shared/errors', object: f.object %>
+        <%= f.label :date %>
+        <%= f.text_field :date %>
+
+        <%= f.label :start_time %>
+        <%= f.text_field :start_time %>
+
+        <%= f.label :end_time %>
+        <%= f.text_field :end_time %>
+
+        <%= f.label :spots %>
+        <%= f.text_field :spots %>
+    <% end %>
+    <label for="recurring">Recurring?</label>
+    <input type="checkbox" value="true" id="recurring">
+    <label id="lblRecCount" for="recCount">Number of Weeks</label>
+    <input type="textbox" id="recCount">
+  </div>
+</div>

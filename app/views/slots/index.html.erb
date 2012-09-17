@@ -1,34 +1,8 @@
 <h1>Multi-rider sessions</h1>
 <div class="container">
   <%= render 'menu' %>
-    <div class="span10 offset1">
-        <table class="table table-condensed table-striped">
-          <thead>
-          <th>Day</th>
-          <th>Start Time</th>
-          <th>End Time</th>
-          <th>Total Spots</th>
-          <th>Spots Available</th>
-          <th>Waiting</th>
-          <th></th>
-          </thead>
-          <% @slots.each do |slot|%>
-              <tr>
-                <td><%= showday(slot.date)%></td>
-                <td><%= showtime(slot.start_time)%></td>
-                <td><%= showtime(slot.end_time)%></td>
-                <td><%= slot.spots %></td>
-                <td><%= spots_available(slot.id) %></td>
-                <td><%= waiting_list_count(slot.id) %></td>
-                <td><%= link_to 'View Details', slot%></td>
-              </tr>
-          <% end %>
-        </table>
-      <%= will_paginate @slots %>
-      <% if signed_in? && current_user.admin? %>
-          <%=  link_to "Create New Session",new_slot_path ,class: "btn btn-large btn-primary" %>
-      <% end %>
-    </div>
+  <%= render 'slots_table' %>
+  <%= render 'preview_slots' %>
 </div>
 
 

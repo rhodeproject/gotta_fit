@@ -35,16 +35,26 @@ class SlotsController < ApplicationController
   def create
     if current_user.admin?
       @slot = Slot.new(params[:slot])
-
       if @slot.save
-        flash[:success] = "New rider session created"
-        redirect_to @slot
+
+        respond_to do |format|
+          format.html {
+            flash[:success] = "New rider session created"
+            redirect_to '/schedule/weekly'
+          }
+          format.json {render :json => @slots}
+        end
       else
-        flash[:error] = "There was an issue creating the session"
-        redirect_to new_slot_path
+        respond_to do |format|
+          format.html {
+            flash[:error] = "There was an issue creating the session"
+            redirect_to new_slot_path
+          }
+          format.json {render :json => @slots}
+        end
       end
     else
-      flash[:warning] = "You must be the sight admin to add sessions"
+      flash[:warning] = "You must be the site admin to add sessions"
     end
   end
 
@@ -52,6 +62,7 @@ class SlotsController < ApplicationController
   end
 
   def index
+    @slot = Slot.new
     if signed_in?
       #Detemine the View for Slots Monthly, Weekly, or Daily
       case params[:view]
@@ -71,7 +82,6 @@ class SlotsController < ApplicationController
           @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time ASC')
           #@slots = Slot.all(:order => "date, start_time DESC")
       end
-
     else
       flash[:warning] = "You must be signed in to view sessions"
       redirect_to root_path

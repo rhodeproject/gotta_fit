@@ -1,0 +1,31 @@
+<div class="span10 offset1">
+  <table class="table table-condensed table-striped">
+    <thead>
+    <th>Day</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Total Spots</th>
+    <th>Spots Available</th>
+    <th>Waiting</th>
+    <th></th>
+    </thead>
+    <tbody id="tblSlots">
+    <% @slots.each do |slot|%>
+        <tr>
+          <td><%= showday(slot.date)%></td>
+          <td><%= showtime(slot.start_time)%></td>
+          <td><%= showtime(slot.end_time)%></td>
+          <td><%= slot.spots %></td>
+          <td><%= spots_available(slot.id) %></td>
+          <td><%= waiting_list_count(slot.id) %></td>
+          <td><%= link_to 'View Details', slot%></td>
+        </tr>
+    <% end %>
+    </tbody>
+    </table>
+  <%= will_paginate @slots %>
+  <% if signed_in? && current_user.admin? %>
+      <a href="#" class="btn btn-primary" id="new">New Session</a>
+      <%= render 'new_slot' %>
+  <% end %>
+</div>

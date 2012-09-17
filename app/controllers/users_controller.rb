@@ -42,8 +42,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+  end
+
   def update
-    flash[:success] = "Test"
+    if @user.update_attributes(params[:user])
+      flash[:success] = "#User update successful!"
+      redirect_to users
+    else
+      flash[:warning] = "There was an issue updating user"
+      redirect_to users
+    end
   end
 
   def destroy

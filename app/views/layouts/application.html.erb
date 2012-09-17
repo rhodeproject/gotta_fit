@@ -2,16 +2,15 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css",
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/themes/cupertino/jquery-ui.css",
                           "application", :media => "all" %>
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js",
-                             "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js",
-                             "application" %>
+  <%= javascript_include_tag "application","jquery-ui-timepicker-addon","http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/jquery-ui.min.js" %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
 </head>
 <body>
 <%= render 'layouts/header' %>
+<div id="flash"></div>
 <div class="container">
   <% flash.each do |key, value| %>
 

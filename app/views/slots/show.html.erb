@@ -1,6 +1,6 @@
 <h1>Multi-rider session Details</h1>
 <h2><%= showday(@slot.date) %> Session at <%= showtime(@slot.start_time) %></h2>
-
+<input type="hidden" id="slotDate" value=<%= @slot.date %>
 
 <div class="container">
   <div class="span10 offset1">
@@ -22,13 +22,14 @@
     </table>
 
     <%= form_for @slot do |u|%>
+
         <% if signed_up?%>
-            <%= u.submit "Leave Session", class:"btn btn-large btn-primary"  %>
+            <%= u.submit "Leave Session", class:"btn btn-large btn-primary", id: "btnSession"  %>
         <% else %>
             <% if spots_available(@slot.id) == 0 %>
-                <%= u.submit "Join Waiting List", class: "btn btn-large btn-primary" %>
+                <%= u.submit "Join Waiting List", class: "btn btn-large btn-primary", id: "btnSession" %>
             <% else %>
-                <%= u.submit "Join Session", class: "btn btn-large btn-primary" %>
+                <%= u.submit "Join Session", class: "btn btn-large btn-primary", id: "btnSession" %>
             <% end %>
         <% end %>
     <% end %>

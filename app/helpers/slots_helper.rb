@@ -41,5 +41,4 @@ module SlotsHelper
     @slot = Slot.find(params[:id])
     @slot.users.where(:id => current_user.id).present?
   end
-
 end
