@@ -73,10 +73,12 @@ function addRecurringSlots(){
     var sPots = $('#slot_spots').val();
     var myDate = new Date(sDate);
     submitAjax(mapDay(myDate.getDay()),sDate,sTime,eTime,sPots);
+
     for (var count = $('#recCount').val(); count > 1; count--){
+
         var addDate = 7 * (count - 1);
-        var newDate = new Date();
-        newDate.setDate(myDate.getDate()+addDate);
+        var newDate = new Date(sDate);
+        newDate.setDate(newDate.getDate() + addDate);
         submitAjax(mapDay(newDate.getDay()),buildDateString(newDate),sTime,eTime,sPots);
     }
 }
