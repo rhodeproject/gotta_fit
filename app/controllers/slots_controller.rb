@@ -134,6 +134,7 @@ class SlotsController < ApplicationController
     @list = @slot.lists.where(:state => "Waiting").order('id DESC')
     if @list.count > 0
       @list[0].update_attribute('state', 'Signed Up')
+
       UserMailer.wait_list_notice(@list[0].user, @slot).deliver
     end
     UserMailer.user_slot_sign_up(current_user,@slot).deliver
