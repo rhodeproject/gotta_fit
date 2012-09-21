@@ -4,12 +4,13 @@ class SlotsController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
 
   end
 
   def update
     #Add user to Slot/Session
-    if params[:commit] == "Join Session" || params[:commit] == "Join Waiting List"
+    if params[:commit] == "Add Me" || params[:commit] == "Join Waiting List"
       if signed_up?
         flash[:warning] = "you are already signed up for this session"
         redirect_to @slot
@@ -21,7 +22,7 @@ class SlotsController < ApplicationController
     end
 
     #Remove user from Slot/Session
-    if params[:commit] == "Leave Session"
+    if params[:commit] == "Remove Me"
       if signed_up?
         remove_user_from_slot
         redirect_to @slot

@@ -43,15 +43,18 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
-    if @user.update_attributes(params[:user])
-      flash[:success] = "#User update successful!"
-      redirect_to users
+      @user = User.find(params[:id])
+
+    if @user.update_attribute(:admin, params[:user][:admin])
+      flash[:success] = "User update successful!"
+      redirect_to users_path
     else
       flash[:warning] = "There was an issue updating user"
-      redirect_to users
+      redirect_to users_path
     end
   end
 

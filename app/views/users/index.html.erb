@@ -5,6 +5,7 @@
       <thead>
           <th>First Name</th>
           <th>Last Name</th>
+          <th>Admin</th>
           <th>Email Address</th>
           <th>Joined</th>
           <th></th>
@@ -14,9 +15,10 @@
         <tr>
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
+          <td><%= is_admin(user) %></td>
           <td><%= user.email %></td>
           <td><%= time_ago_in_words(user.created_at) %></td>
-          <td><%= link_to "Edit", user, :method => :update%> |
+          <td><%= link_to "Edit", user, :method => :edit%> |
             <%= link_to "Delete", user, :confirm => 'Are you sure?', :method => :delete%></td>
         </tr>
       <% end %>
