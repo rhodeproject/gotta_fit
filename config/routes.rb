@@ -7,7 +7,7 @@ GottaFit::Application.routes.draw do
   get "wait_lists/index"
 
   get "slots/new"
-
+  get "slots/calendar"
   get "slots/edit"
 
   get "slots/create"

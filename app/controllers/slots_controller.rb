@@ -62,6 +62,17 @@ class SlotsController < ApplicationController
   def destroy
   end
 
+  def calendar
+    @slots = Slot.all
+    @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time ASC').by_month Date.today
+
+    respond_to do |format|
+      format.html  { render :html => @slots}
+      format.xml  { render :xml => @slots }
+      format.js  { render :json => @slots }
+    end
+  end
+
   def index
     @slot = Slot.new
     if signed_in?
@@ -80,9 +91,17 @@ class SlotsController < ApplicationController
         when "tomorrow"
           @slots = Slot.paginate(page: params[:page], :per_page => 7).order('start_time ASC').by_tomorrow Date.today
         else
-          @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time ASC')
+          #@slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time ASC')
           #@slots = Slot.all(:order => "date, start_time DESC")
+          @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time ASC').by_month Date.today
       end
+
+      respond_to do |format|
+        format.html  { render :html => @slots}
+        format.xml  { render :xml => @slots }
+        format.js  { render :json => @slots }
+      end
+
     else
       flash[:warning] = "You must be signed in to view sessions"
       redirect_to root_path

@@ -7,7 +7,7 @@
  */
 $(document).ready(function(){
     $('#calendar').fullCalendar({
-        editable: false,
+        editable: true,
         theme: true,
         ignoreTimezone: false,
         header: {
@@ -15,6 +15,8 @@ $(document).ready(function(){
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         },
+        startParam: 'start_time',
+        endParam: 'end_time',
         weekMode: 'liquid',
         defaultView: 'month',
         height: 500,
@@ -30,7 +32,7 @@ $(document).ready(function(){
 
         // a future calendar might have many sources.
         eventSources: [{
-            url: '/slots',
+            url: '/slots/calendar',
             eventColor: '#378006',
             color: 'green',
             textColor: 'black',
@@ -60,8 +62,8 @@ $(document).ready(function(){
         $.update(
             "/slots/" + the_event.id,
             { event: { title: the_event.title,
-                starts_at: "" + the_event.starts_at,
-                ends_at: "" + the_event.ends_at,
+                start_time: "" + the_event.start_time,
+                end_time: "" + the_event.end_time,
                 description: the_event.description
             }
             },

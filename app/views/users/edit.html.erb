@@ -13,8 +13,9 @@
         <%= f.label :email %>
         <%= f.text_field :email %>
         <br>
-        <%= f.check_box :admin %> Admin?<br>
 
+        <%= f.check_box :admin, id: "chkAdmin"%>
+        <label for='chkAdmin'>Admin?</label>
         <br>
         <%= f.submit "Update Account", class: "btn btn-primary" %>
     <% end %>

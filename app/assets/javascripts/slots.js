@@ -10,6 +10,12 @@ $(document).ready(function(){
     $('#new_slot').hide();
     $('#recCount').hide();
     $('#lblRecCount').hide();
+    $('#btnSession').hide();
+
+    if ($('#slotDate').length > 0 && $('#slotTime').length > 0) {
+        currentSlot($('#slotDate').val(),$('#slotTime').val());
+    }
+
     $('#slot_date').datepicker({
         minDate: new Date()
     });
@@ -117,4 +123,32 @@ function submitAjax(sDay,sDate,sTime,eTime,sPots){
         },
         dataType: "JSON"
     });
+}
+
+function currentSlot(sDate, sTime){
+    /*sDate is in format YYYY-MM-DD*/
+    /*Split sDate*/
+    splitDate = sDate.split('-');
+    splitDay = splitDate[2];
+    splitMonth = splitDate[1] - 1;
+    splitYear = splitDate[0];
+
+    /*sTime is in the format HH:MM:SS*/
+    /*split Time*/
+    splitTime = sTime.split(':');
+    splitHour = splitTime[0];
+    splitMinute = splitTime[1];
+    splitSecond = splitTime[2];
+
+    window.console && console.log(splitDate);
+    window.console && console.log(splitTime);
+    window.console && console.log("Split Year" + splitYear);
+    dDate = new Date();
+    slotDate = new Date(splitYear,splitMonth,splitDay,splitHour,splitMinute,splitSecond);
+
+    window.console && console.log(dDate);
+    window.console && console.log(slotDate);
+    if (dDate < slotDate){
+        $('#btnSession').show();
+    };
 }

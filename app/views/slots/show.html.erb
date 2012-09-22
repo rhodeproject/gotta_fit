@@ -1,7 +1,7 @@
 <h1>Multi-rider session Details</h1>
-<h2><%= showday(@slot.date) %> Session at <%= showtime(@slot.start_time) %></h2>
-<input type="hidden" id="slotDate" value=<%= @slot.date %>
-
+<h2><%= showday(@slot.date) %> Session at<%= showtime(@slot.start_time) %></h2>
+<input type="hidden" id="slotDate" value=<%= @slot.date %>>
+<input type="hidden" id="slotTime" value=<%= @slot.start_time %>>
 <div class="container">
   <div class="span10 offset1">
     <table class="table table-condensed table-striped">
@@ -21,18 +21,18 @@
       <% end %>
     </table>
 
-    <%= form_for @slot do |u|%>
+        <%= form_for @slot do |u|%>
 
-        <% if signed_up?%>
-            <%= u.submit "Remove Me", class:"btn btn-large btn-primary", id: "btnSession"  %>
-        <% else %>
-            <% if spots_available(@slot.id) == 0 %>
-                <%= u.submit "Join Waiting List", class: "btn btn-large btn-primary", id: "btnSession" %>
+            <% if signed_up?%>
+                <%= u.submit "Remove Me", class:"btn btn-large btn-primary", id: "btnSession"  %>
             <% else %>
-                <%= u.submit "Add Me", class: "btn btn-large btn-primary", id: "btnSession" %>
+                <% if spots_available(@slot.id) == 0 %>
+                    <%= u.submit "Join Waiting List", class: "btn btn-large btn-primary", id: "btnSession" %>
+                <% else %>
+                    <%= u.submit "Add Me", class: "btn btn-large btn-primary", id: "btnSession" %>
+                <% end %>
             <% end %>
         <% end %>
-    <% end %>
 
   </div>
 </div>

@@ -37,6 +37,9 @@ class Slot < ActiveRecord::Base
   scope :by_next_week, lambda {|d| {:conditions => {:date => d.beginning_of_week.next_week..d.end_of_week.next_week}}}
   scope :by_next_month, lambda {|d| {:conditions => {:date => d.beginning_of_month.next_month..d.end_of_month.next_month}}}
   scope :by_tomorrow, lambda {|d| {:conditions => {:date => d.tomorrow}}}
+
+  scope :before, lambda {|end_time| {:conditions => ["ends_time < ?", Slot.format_date(end_time)] }}
+  scope :after, lambda {|start_time| {:conditions => ["starts_time > ?", Slot.format_date(start_time)] }}
   private
 
   def convertdate(sdate)
@@ -47,6 +50,11 @@ class Slot < ActiveRecord::Base
   def converttime(stime)
     (Time.parse stime).strftime('%H:%M:%S')
   end
+
+  def self.format_date(date_time)
+    Time.at(date_time.to_i).to_formatted_s(:db)
+  end
+
 end
 
 
