@@ -1,5 +1,5 @@
 <div class="span10 offset1">
-  <table class="table table-condensed table-striped">
+  <table class="table table-condensed table-striped" id="tblShowSlots">
     <thead>
     <th>Day</th>
     <th>Start Time</th>
@@ -23,8 +23,9 @@
     <% end %>
     </tbody>
     </table>
-  <%= will_paginate @slots %>
+
   <% if signed_in? && current_user.admin? %>
+      <br><br>
       <a href="#" class="btn btn-primary" id="new">New Session</a>
       <%= render 'new_slot' %>
   <% end %>

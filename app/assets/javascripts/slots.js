@@ -11,7 +11,22 @@ $(document).ready(function(){
     $('#recCount').hide();
     $('#lblRecCount').hide();
     $('#btnSession').hide();
-
+    $('#tblSlot').dataTable({
+        "bRetrieve": true,
+        "bLengthChange": false,
+        "bFilter": false,
+        "bInfo": true,
+        "bJqueryUI": true,
+        "bAutoWidth": false
+    });
+    $('#tblShowSlots').dataTable({
+        "bRetrieve": true,
+        "bLengthChange": false,
+        "bFilter": false,
+        "bInfo": true,
+        "bJqueryUI": true,
+        "bAutoWidth": false
+    });
     if ($('#slotDate').length > 0 && $('#slotTime').length > 0) {
         currentSlot($('#slotDate').val(),$('#slotTime').val());
     }

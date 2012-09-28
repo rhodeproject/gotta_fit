@@ -4,23 +4,24 @@
 <input type="hidden" id="slotTime" value=<%= @slot.start_time %>>
 <div class="container">
   <div class="span10 offset1">
-    <table class="table table-condensed table-striped">
+    <table class="table table-condensed table-striped" id="tblSlot">
       <thead>
-        <th>Rider Number</th>
         <th>Name</th>
         <th>email</th>
         <th>Status</th>
     </thead>
+    <tbody>
       <% @riders.each_with_index do |r, i| %>
           <tr>
-              <td><%= i + 1 %></td>
               <td><%= r.first_name %> <%= r.last_name %></td>
               <td><%= r.email %></td>
-              <td><%= get_slot_state(r) %></td>
+              <td><%= get_slot_state(r)%></td>
           </tr>
       <% end %>
-    </table>
-
+      </tbody>
+      </table>
+       <br>
+    <br>
         <%= form_for @slot do |u|%>
 
             <% if signed_up?%>
