@@ -7,26 +7,12 @@
  */
 $(document).ready(function(){
     /*Initialize*/
+
     $('#new_slot').hide();
     $('#recCount').hide();
     $('#lblRecCount').hide();
     $('#btnSession').hide();
-    $('#tblSlot').dataTable({
-        "bRetrieve": true,
-        "bLengthChange": false,
-        "bFilter": false,
-        "bInfo": true,
-        "bJqueryUI": true,
-        "bAutoWidth": false
-    });
-    $('#tblShowSlots').dataTable({
-        "bRetrieve": true,
-        "bLengthChange": false,
-        "bFilter": false,
-        "bInfo": true,
-        "bJqueryUI": true,
-        "bAutoWidth": false
-    });
+
     if ($('#slotDate').length > 0 && $('#slotTime').length > 0) {
         currentSlot($('#slotDate').val(),$('#slotTime').val());
     }
@@ -160,7 +146,6 @@ function currentSlot(sDate, sTime){
     window.console && console.log("Split Year" + splitYear);
     dDate = new Date();
     slotDate = new Date(splitYear,splitMonth,splitDay,splitHour,splitMinute,splitSecond);
-
     window.console && console.log(dDate);
     window.console && console.log(slotDate);
     if (dDate < slotDate){
