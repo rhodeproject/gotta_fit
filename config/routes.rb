@@ -19,6 +19,7 @@ GottaFit::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :slots
+  resources :password_resets
   match '/calendars(/:year(/:month))' => 'calendars#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   get "static_pages/help"

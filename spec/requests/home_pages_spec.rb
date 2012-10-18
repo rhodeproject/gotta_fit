@@ -7,6 +7,8 @@ describe "HomePages" do
       get root_path
       response.body.should include('gotta_fit')
       response.body.should include('home')
+      response.body.should include('Multi Rider Sessions')
     end
   end
+
 end

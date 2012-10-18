@@ -48,4 +48,16 @@ class UserMailer < ActionMailer::Base
 
     mail(:to => address, :subject => subject)
   end
+
+  def password_reset(user)
+    @user = user
+    address = @user.email
+    subject = "Password reset request for #{@user.first_name}"
+    if Rails.env.development?
+      url = "http://localhost:3000"
+    else
+      url = "https://www.gottafit.com"
+    end
+    mail(:to => address, :subject => subject)
+  end
 end

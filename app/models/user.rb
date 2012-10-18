@@ -39,10 +39,20 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length:{minimum: 6} #password must exist and be at least 6 characters
   validates :password_confirmation, presence: true
 
+  def send_password_reset
+    self.update_attribute('reset_token', generate_token)
+    self.update_attribute('password_reset_sent_at', Time.zone.now)
+    UserMailer.password_reset(self).deliver
+  end
+
   #private methods for the user model
   private
   def create_remember_token
     self.remember_token = SecureRandom.urlsafe_base64
+  end
+
+  def generate_token
+    SecureRandom.urlsafe_base64
   end
 
   def send_confirm(user)

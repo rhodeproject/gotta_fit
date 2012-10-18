@@ -9,6 +9,7 @@ gem 'fullcalendar-rails'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.5'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'bullet', group: :development
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -20,6 +21,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'minitest'
   gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 gem 'jquery-rails'

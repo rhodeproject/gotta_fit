@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ebce6a9-ef06-4422-a210-8cae1c21b533" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/password_resets/edit.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/password_resets/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_mailer/password_reset.text.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/bullet.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/requests/password_resets_spec.rb" />
       <change type="DELETED" beforePath="C:\Sites\gotta_fit\spec\models\wait_list_spec.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/slots.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/slots.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/slots/show.html.erb" afterPath="$PROJECT_DIR$/app/views/slots/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/users.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/user_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_login.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_login.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/requests/home_pages_spec.rb" afterPath="$PROJECT_DIR$/spec/requests/home_pages_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/spec_helper.rb" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" />
     </list>
     <ignored path="gotta_fit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,66 +47,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <file leaf-file-name="development.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="78" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.0">
+            <state line="38" column="88" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slots.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/slots.js">
+      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/password_resets/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="97" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.0">
+            <state line="4" column="19" selection-start="97" selection-end="97" vertical-scroll-proportion="-2.6153846">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <file leaf-file-name="password_resets_spec.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/requests/password_resets_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="740" selection-end="740" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slot.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/slot.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="71" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0">
+            <state line="11" column="83" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slots_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/slots_controller.rb">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="55" selection-start="3986" selection-end="3986" vertical-scroll-proportion="0.0">
+            <state line="23" column="19" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/slots/show.html.erb">
+      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="43" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.88382685">
+            <state line="44" column="29" selection-start="1743" selection-end="1743" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users_helper.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/users_helper.rb">
+      <file leaf-file-name="home_pages_spec.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spec/requests/home_pages_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="12" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.43870968">
               <folding />
             </state>
           </provider>
@@ -111,22 +114,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/shared/_ride_details.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/fullcalendar.js" />
+        <option value="$PROJECT_DIR$/app/controllers/password_reset_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/users.js" />
+        <option value="$PROJECT_DIR$/app/controllers/password_resets_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/password_resets/new.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/models/slot.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/calendars.js" />
-        <option value="$PROJECT_DIR$/app/views/calendars/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/slots_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/slots/_slots_table.html.erb" />
-        <option value="$PROJECT_DIR$/spec/mailers/user_mailer_spec.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/slots_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/slots.js" />
-        <option value="$PROJECT_DIR$/app/views/slots/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/views/user_mailer/password_reset.text.erb" />
+        <option value="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/config/environments/development.rb" />
+        <option value="$PROJECT_DIR$/app/views/password_resets/edit.html.erb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
+        <option value="$PROJECT_DIR$/spec/factories.rb" />
+        <option value="$PROJECT_DIR$/spec/requests/password_resets_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/requests/home_pages_spec.rb" />
       </list>
     </option>
   </component>
@@ -197,7 +200,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gotta_fit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gotta_fit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="requests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gotta_fit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gotta_fit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -229,18 +264,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -251,6 +276,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="gotta_fit" />
               <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -533,11 +568,11 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in: spec" />
-      <item index="1" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Production: gotta_fit" />
-      <item index="4" class="java.lang.String" itemvalue="Rails.Development: gotta_fit" />
+      <item index="0" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="2" class="java.lang.String" itemvalue="Rails.Production: gotta_fit" />
+      <item index="3" class="java.lang.String" itemvalue="Rails.Development: gotta_fit" />
+      <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in: spec" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -596,7 +631,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.73913044" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22646104" sideWeight="0.7795031" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22366288" sideWeight="0.76086956" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23176661" sideWeight="0.76086956" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29037267" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22646104" sideWeight="0.7795031" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23913044" sideWeight="0.67585087" order="7" side_tool="true" content_ui="tabs" />
@@ -665,108 +700,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/slots/_menu.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/password_resets_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/slots/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/mailers/user_mailer_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="54" selection-start="107" selection-end="107" vertical-scroll-proportion="0.13731825" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/calendars_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/slots/_slots_table.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="2" selection-start="742" selection-end="742" vertical-scroll-proportion="0.9427208">
+        <state line="23" column="5" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/helpers/calendars_helper_spec.rb">
+    <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="56" selection-start="1535" selection-end="1535" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/password_reset.text.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="27" selection-start="132" selection-end="155" vertical-scroll-proportion="-3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="76" selection-start="2573" selection-end="2573" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="88" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/password_resets/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="19" selection-start="97" selection-end="97" vertical-scroll-proportion="-2.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/controllers/password_resets_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_login.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="61" selection-start="363" selection-end="386" vertical-scroll-proportion="0.4868735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="28" selection-start="361" selection-end="361" vertical-scroll-proportion="0.17256637">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="29" selection-start="1743" selection-end="1743" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/requests/password_resets_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="83" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/factories.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="35" selection-start="180" selection-end="180" vertical-scroll-proportion="0.22921348">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="4" selection-start="700" selection-end="700" vertical-scroll-proportion="0.76404494">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="23" column="19" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
+    <entry file="file://$PROJECT_DIR$/spec/requests/home_pages_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="0" selection-start="2348" selection-end="2348" vertical-scroll-proportion="0.78064513">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="78" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="740" selection-end="740" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/slot.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="71" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/slots.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="97" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/slots_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="55" selection-start="3986" selection-end="3986" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/slots_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/users_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/slots/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="43" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.88382685">
+        <state line="12" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.43870968">
           <folding />
         </state>
       </provider>

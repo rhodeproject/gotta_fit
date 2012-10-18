@@ -29,7 +29,7 @@ $(document).ready(function(){
     $('#frmLogin').dialog({
         autoOpen: false,
         open: {effect: "fadeIn", duration: 500},
-        height: 275,
+        height: 300,
         width: 300,
         modal: true
     });
