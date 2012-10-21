@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
   #before_save :create_remember_token
   before_save { |user| user.email = email.downcase}
   after_create  { |user| send_confirm(user)}
+  after_create :set_rides
 
   #validation
   validates :first_name, presence: true, length:{maximum: 50} #first_name must exist and cannot exceed 50 characters
@@ -61,6 +62,10 @@ class User < ActiveRecord::Base
 
   def generate_token
     SecureRandom.urlsafe_base64
+  end
+
+  def set_rides
+    self.update_attribute('purchased_rides','0')
   end
 
   def send_confirm(user)
