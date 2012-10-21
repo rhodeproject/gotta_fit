@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   #callbacks
-  #before_save :create_remember_token
+  after_create :create_remember_token
   before_save { |user| user.email = email.downcase}
   after_create  { |user| send_confirm(user)}
   after_create :set_rides
