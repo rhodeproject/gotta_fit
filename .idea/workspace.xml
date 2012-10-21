@@ -5,7 +5,7 @@
       <change type="DELETED" beforePath="C:\Sites\gotta_fit\app\views\password_reset\edit.html.erb" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\gotta_fit\app\views\password_reset\new.html.erb" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\gotta_fit\spec\models\wait_list_spec.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
     </list>
     <ignored path="gotta_fit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,64 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="slot.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/slot.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="80" selection-start="738" selection-end="738" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slots.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/slots.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="10" selection-start="3381" selection-end="3468" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="44" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="61" selection-start="700" selection-end="700" vertical-scroll-proportion="0.5808656">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_slots_table.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/slots/_slots_table.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="53" selection-start="357" selection-end="633" vertical-scroll-proportion="-12.423077">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="26" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="39" selection-start="545" selection-end="545" vertical-scroll-proportion="-11.769231">
+            <state line="53" column="61" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.3419355">
               <folding />
             </state>
           </provider>
@@ -121,8 +67,8 @@
         <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/slots_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
       </list>
     </option>
   </component>
@@ -240,28 +186,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gotta_fit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gotta_fit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slots" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -767,7 +691,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="39" selection-start="545" selection-end="545" vertical-scroll-proportion="-11.769231">
+        <state line="18" column="39" selection-start="545" selection-end="545" vertical-scroll-proportion="0.6970387">
           <folding />
         </state>
       </provider>
@@ -781,7 +705,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="26" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0">
+        <state line="31" column="26" selection-start="978" selection-end="978" vertical-scroll-proportion="0.8043011">
           <folding />
         </state>
       </provider>
@@ -809,7 +733,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/slots/_slots_table.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="53" selection-start="357" selection-end="633" vertical-scroll-proportion="-12.423077">
+        <state line="19" column="53" selection-start="357" selection-end="633" vertical-scroll-proportion="0.7357631">
           <folding />
         </state>
       </provider>
@@ -821,16 +745,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="44" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0">
+        <state line="24" column="61" selection-start="700" selection-end="700" vertical-scroll-proportion="0.5808656">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="61" selection-start="700" selection-end="700" vertical-scroll-proportion="0.5808656">
+        <state line="53" column="61" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.3419355">
           <folding />
         </state>
       </provider>
