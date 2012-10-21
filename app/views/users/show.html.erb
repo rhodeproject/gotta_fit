@@ -22,7 +22,7 @@
             <tbody>
                 <% @rides.each do |slot| %>
                 <tr>
-                    <td><%= showday(slot.date)%></td>
+                    <td><%= link_to showday(slot.date), slot%></td>
                     <td><%= showtime(slot.start_time)%></td>
                     <td><%= showtime(slot.end_time)%></td>
                     <td><%= slot.spots %></td>
