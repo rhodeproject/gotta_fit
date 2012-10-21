@@ -1,6 +1,6 @@
 <% provide(:title, @user.first_name) %>
 <div class="row">
-  <aside class="span3">
+  <aside class="span2">
     <section>
       <h1>
        <%= @user.first_name %>
@@ -8,15 +8,30 @@
     </section>
   </aside>
   <% if @user.active? %>
-      <div class="span6">
-
-          <h4>
-            <p>You account is Active</p>
-          </h4>
-        <% if signed_in? %>
-           and signed in!
-        <% end %>
-
+      <div class="span8">
+        <h2>upcoming rides</h2>
+        <table class="table table-striped">
+            <thead>
+                <th>Day</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Total Spots</th>
+                <th>Spots Available</th>
+                <th>Waiting</th>
+            </thead>
+            <tbody>
+                <% @rides.each do |slot| %>
+                <tr>
+                    <td><%= showday(slot.date)%></td>
+                    <td><%= showtime(slot.start_time)%></td>
+                    <td><%= showtime(slot.end_time)%></td>
+                    <td><%= slot.spots %></td>
+                    <td><%= spots_available(slot.id) %></td>
+                    <td><%= waiting_list_count(slot.id) %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
       </div>
   <%else%>
       <div class="span6">
