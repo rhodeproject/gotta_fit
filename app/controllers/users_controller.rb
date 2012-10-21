@@ -47,9 +47,9 @@ class UsersController < ApplicationController
   end
 
   def update
-      @user = User.find(params[:id])
-
-    if @user.update_attribute(:admin, params[:user][:admin])
+    @user = User.find(params[:id])
+    if @user.update_attribute(:admin, params[:user][:admin]) &&
+        @user.update_attribute(:purchased_rides, params[:user][:purchased_rides])
       flash[:success] = "User update successful!"
       redirect_to users_path
     else

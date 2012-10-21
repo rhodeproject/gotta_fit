@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   #callbacks
-  before_save :create_remember_token
+  #before_save :create_remember_token
   before_save { |user| user.email = email.downcase}
   after_create  { |user| send_confirm(user)}
 
@@ -43,6 +43,14 @@ class User < ActiveRecord::Base
     self.update_attribute('reset_token', generate_token)
     self.update_attribute('password_reset_sent_at', Time.zone.now)
     UserMailer.password_reset(self).deliver
+  end
+
+  def remove_ride
+    self.update_attribute('purchased_rides', self.purchased_rides - 1)
+  end
+
+  def add_ride
+    self.update_attribute('purchased_rides', self.purchased_rides + 1)
   end
 
   #private methods for the user model

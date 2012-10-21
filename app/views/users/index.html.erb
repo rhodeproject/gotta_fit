@@ -8,6 +8,7 @@
           <th>Admin</th>
           <th>Email Address</th>
           <th>Joined</th>
+          <th>Remaining Rides</th>
           <th></th>
       </thead>
       <tbody>
@@ -18,6 +19,7 @@
           <td><%= is_admin(user) %></td>
           <td><%= user.email %></td>
           <td><%= time_ago_in_words(user.created_at) %></td>
+          <td><%= ride_count(user) %></td>
           <td><%= link_to "Edit", user, :method => :edit%> |
             <%= link_to "Delete", user, :confirm => 'Are you sure?', :method => :delete%></td>
         </tr>

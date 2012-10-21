@@ -12,5 +12,10 @@ module UsersHelper
     end
   end
 
+  def ride_count(user)
+    count = 0
+    count = user.purchased_rides unless user.purchased_rides.nil?
+    count
+  end
 end
 

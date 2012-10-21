@@ -138,6 +138,7 @@ class SlotsController < ApplicationController
     if @slot.users << current_user
       @list = current_user.lists.find_by_slot_id(params[:id])
       @list.update_attribute('state', state)
+      current_user.remove_ride unless state == "Waiting"
       UserMailer.user_slot_sign_up(current_user,@slot).deliver
       flash[:success] = "You are #{state} for session!"
     else
@@ -152,6 +153,7 @@ class SlotsController < ApplicationController
       check_wait_list
     end
     if @slot.users.delete(current_user)
+      current_user.add_ride
       flash[:notice] = "You have been removed from this session"
     end
   end
@@ -160,6 +162,7 @@ class SlotsController < ApplicationController
     @list = @slot.lists.where(:state => "Waiting").order('updated_at ASC')
     if @list.count > 0
       @list[0].update_attribute('state', 'Signed Up')
+      current_user.remove_ride
       UserMailer.wait_list_notice(@list[0].user, @slot).deliver
     end
     UserMailer.user_slot_sign_up(current_user,@slot).deliver
