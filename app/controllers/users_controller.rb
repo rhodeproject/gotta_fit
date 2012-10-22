@@ -7,8 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.confirm_code = SecureRandom.urlsafe_base64
     if @user.save
-      sign_in @user
-      flash["success"] = "Welcome #{@user.first_name}!"
+      flash["success"] = "Welcome #{@user.first_name}! Check you email in order to activate your account."
       UserMailer.new_user_notice(@user).deliver
       redirect_to root_path
     else

@@ -41,7 +41,7 @@ $(document).ready(function(){
         autoOpen: false,
         open: {effect: "fadeIn", duration: 500},
         hide: {effect: "fadeOut", duration: 500},
-        height: 500,
+        height: 550,
         width: 300,
         modal: true,
         buttons: [
@@ -53,7 +53,8 @@ $(document).ready(function(){
                         $('#preview').fadeIn('slow');
                     }else{
                         var myDate = new Date($('#slot_date').val());
-                        submitAjax(mapDay(myDate.getDay()),
+                        submitAjax($('#slot_description').val(),
+                            mapDay(myDate.getDay()),
                             $('#slot_date').val(),
                             $('#slot_start_time').val(),
                             $('#slot_end_time').val(),
@@ -74,19 +75,20 @@ $(document).ready(function(){
 
 /*Functions*/
 function addRecurringSlots(){
+    var sDescription = $('#slot_description').val();
     var sDate = $('#slot_date').val();
     var sTime = $('#slot_start_time').val();
     var eTime = $('#slot_end_time').val();
     var sPots = $('#slot_spots').val();
     var myDate = new Date(sDate);
-    submitAjax(mapDay(myDate.getDay()),sDate,sTime,eTime,sPots);
+    submitAjax(sDescription,mapDay(myDate.getDay()),sDate,sTime,eTime,sPots);
 
     for (var count = $('#recCount').val(); count > 1; count--){
 
         var addDate = 7 * (count - 1);
         var newDate = new Date(sDate);
         newDate.setDate(newDate.getDate() + addDate);
-        submitAjax(mapDay(newDate.getDay()),buildDateString(newDate),sTime,eTime,sPots);
+        submitAjax(sDescription,mapDay(newDate.getDay()),buildDateString(newDate),sTime,eTime,sPots);
     }
 }
 function buildDateString(dDate){
@@ -100,11 +102,12 @@ function mapDay(iDay){
     var aDays = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
     return aDays[iDay];
 }
-function submitAjax(sDay,sDate,sTime,eTime,sPots){
+function submitAjax(sDesc,sDay,sDate,sTime,eTime,sPots){
     $.ajax({
         type: "POST",
         url: '/slots',
         data: {slot:{date: sDate,
+            description: sDesc,
             start_time: sTime,
             end_time: eTime,
             spots: sPots}},
@@ -115,6 +118,7 @@ function submitAjax(sDay,sDate,sTime,eTime,sPots){
             $('.alert').append('New Rider Session Added');
             $('#tblPreviewSlots').append(
                 '<tr><td>'+sDay+" "+sDate+'</td><td>'
+                    +sDesc+'</td><td>'
                     +sTime+'</td><td>'
                     +eTime+'</td><td>'
                     +sPots+'</td><td>'

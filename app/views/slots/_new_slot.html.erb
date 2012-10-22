@@ -2,6 +2,10 @@
   <div id="session_date" class="span2">
     <%= form_for(@slot) do |f| %>
         <%= render 'shared/errors', object: f.object %>
+
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+
         <%= f.label :date %>
         <%= f.text_field :date %>
 

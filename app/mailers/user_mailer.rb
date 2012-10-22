@@ -14,6 +14,19 @@ class UserMailer < ActionMailer::Base
     mail(:to => address, :subject => subject)
   end
 
+  def reminder_email(user, slot)
+    @user = user
+    @slot = slot
+    if Rails.env.development?
+      address = "mhatch73@gmail.com"
+      subject = "---Test-#{@user.email}-- TriFit Lab Reminder"
+    else
+      address = @user.email
+      subject = "TriFit Lab - TriFit Lab Reminder!"
+    end
+    mail(:to => address, :subject => subject)
+  end
+
   def new_user_confirmation(user)
     @user = user
     if Rails.env.development?
