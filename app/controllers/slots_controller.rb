@@ -16,7 +16,7 @@ class SlotsController < ApplicationController
         redirect_to @slot
       else
         @slot = Slot.find(params[:id])
-        add_user_to_slot
+        flash[:success] = @slot.add_user(current_user)
         redirect_to @slot
       end
     end
@@ -24,7 +24,7 @@ class SlotsController < ApplicationController
     #Remove user from Slot/Session
     if params[:commit] == "Remove Me"
       if signed_up?
-        remove_user_from_slot
+        flash[:success] =  @slot.remove_user(current_user)
         redirect_to @slot
       else
         flash[:notice] = "You are not signed up"
@@ -126,45 +126,4 @@ class SlotsController < ApplicationController
     end
   end
 
-  private
-
-  def add_user_to_slot
-    @slot = Slot.find(params[:id])
-    if spots_available(params[:id]) > 0
-      state = "Signed Up"
-    else
-      state = "Waiting"
-    end
-    if @slot.users << current_user
-      @list = current_user.lists.find_by_slot_id(params[:id])
-      @list.update_attribute('state', state)
-      current_user.remove_ride unless state == "Waiting"
-      UserMailer.user_slot_sign_up(current_user,@slot).deliver
-      flash[:success] = "You are #{state} for session!"
-    else
-      flash[:warning] = "There was an issue adding you to the Multi-rider session"
-    end
-  end
-
-  def remove_user_from_slot
-    @slot = Slot.find(params[:id])
-    list = @slot.lists.where(:user_id => current_user.id)
-    if list[0].state != "Waiting"
-      check_wait_list
-    end
-    if @slot.users.delete(current_user)
-      current_user.add_ride
-      flash[:notice] = "You have been removed from this session"
-    end
-  end
-
-  def check_wait_list
-    @list = @slot.lists.where(:state => "Waiting").order('updated_at ASC')
-    if @list.count > 0
-      @list[0].update_attribute('state', 'Signed Up')
-      current_user.remove_ride
-      UserMailer.wait_list_notice(@list[0].user, @slot).deliver
-    end
-    UserMailer.user_slot_sign_up(current_user,@slot).deliver
-  end
 end

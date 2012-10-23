@@ -13,22 +13,22 @@
     </thead>
     <tbody>
       <% @riders.each_with_index do |r, i| %>
-          <% if get_slot_state(r) == "Signed Up" %>
+          <% if r.get_slot_state(params[:id]) == "Signed Up" %>
           <tr>
               <td><%= r.first_name %> <%= r.last_name %></td>
               <% if current_user.admin? %><td><%= r.email %></td><% end %>
-              <td><%= slot_count(r) %></td>
-              <td><%= get_slot_state(r)%></td>
+              <td><%= r.completed_rides %></td>
+              <td><%= r.get_slot_state(params[:id])%></td>
           </tr>
           <% end %>
       <% end %>
       <% @riders.each_with_index do |r, i| %>
-        <% if get_slot_state(r) == "Waiting" %>
+        <% if r.get_slot_state(params[:id]) == "Waiting" %>
             <tr>
               <td><%= r.first_name %> <%= r.last_name %></td>
               <% if current_user.admin? %><td><%= r.email %></td><% end %>
-              <td><%= slot_count(r) %></td>
-              <td><%= get_slot_state(r)%></td>
+              <td><%= r.completed_rides %></td>
+              <td><%= r.get_slot_state(params[:id])%></td>
             </tr>
         <% end %>
     <% end %>
@@ -41,7 +41,7 @@
             <% if signed_up?%>
                 <%= u.submit "Remove Me", class:"btn btn-large btn-primary", id: "btnSession"  %>
             <% else %>
-                <% if spots_available(@slot.id) == 0 %>
+                <% if @slot.available_spots == 0 %>
                     <%= u.submit "Join Waiting List", class: "btn btn-large btn-primary", id: "btnSession" %>
                 <% else %>
                     <%= u.submit "Add Me", class: "btn btn-large btn-primary", id: "btnSession" %>

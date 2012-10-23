@@ -40,7 +40,58 @@ class Slot < ActiveRecord::Base
 
   scope :before, lambda {|end_time| {:conditions => ["ends_time < ?", Slot.format_date(end_time)] }}
   scope :after, lambda {|start_time| {:conditions => ["starts_time > ?", Slot.format_date(start_time)] }}
+
+  def remove_user(user)
+    list = self.lists.where(:user_id => user.id)
+    if list[0].state != "Waiting"
+      check_wait_list(user)
+    end
+    if self.users.delete(user)
+      user.add_ride
+      message = "You have been removed from this session"
+    end
+    message
+  end
+
+  def add_user(user)
+    if self.available_spots > 0
+      state = "Signed Up"
+    else
+      state = "Waiting"
+    end
+    if self.users << user
+      @list = user.lists.find_by_slot_id(self.id)
+      @list.update_attribute('state', state)
+      user.remove_ride unless state == "Waiting"
+      UserMailer.user_slot_sign_up(user,self).deliver
+      flash  = "You are #{state} for session!"
+    else
+      flash = "There was an issue adding you to the Multi-rider session"
+    end
+    flash
+  end
+
+  def available_spots
+    slot_count = self.spots
+    slots_taken = self.lists.where(:state => "Signed Up").count
+    slot_count - slots_taken
+  end
+
+  def waiting
+    self.lists.where(:state => "Waiting").count
+  end
+
   private
+
+  def check_wait_list(user)
+    list = self.lists.where(:state => "Waiting").order('updated_at ASC')
+    if list.count > 0
+      list[0].update_attribute('state', 'Signed Up')
+      user.remove_ride
+      UserMailer.wait_list_notice(@list[0].user, self).deliver
+    end
+    UserMailer.user_slot_sign_up(user,self).deliver
+  end
 
   def convertdate(sdate)
     #DateTime.parse(sdate)

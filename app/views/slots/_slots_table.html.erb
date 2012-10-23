@@ -18,8 +18,8 @@
           <td><%= showtime(slot.start_time)%></td>
           <td><%= showtime(slot.end_time)%></td>
           <td><%= slot.spots %></td>
-          <td><%= spots_available(slot.id) %></td>
-          <td><%= waiting_list_count(slot.id) %></td>
+          <td><%= slot.available_spots %></td>
+          <td><%= slot.waiting %></td>
           <td><%= link_to 'View Details', slot%></td>
         </tr>
     <% end %>

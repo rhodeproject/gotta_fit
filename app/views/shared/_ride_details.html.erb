@@ -1,5 +1,5 @@
 <h3>Upcoming Rides</h3> <br>
-<% user_rides(current_user).each do |s| %>
+<% current_user.rides.each do |s| %>
     <% if s.date.to_date.future? || s.date.to_date.today?%>
         <span class="content">
          <%= link_to showday(s.date), s %>

@@ -54,6 +54,23 @@ class User < ActiveRecord::Base
     self.update_attribute('purchased_rides', self.purchased_rides + 1)
   end
 
+  def completed_rides
+    self.slots.count(:conditions => ["date < ?", Date.today])
+  end
+
+  def upcoming_rides
+    self.slots.count(:conditions => ["date >= ?", Date.today])
+  end
+
+  def get_slot_state(slot_id)
+    list = self.lists.find_by_slot_id(slot_id)
+    list.state
+  end
+
+  def rides
+    self.slots.where("date >= ?", Date.today).limit(3).order("date, start_time ASC")
+  end
+
   #private methods for the user model
   private
   def create_remember_token

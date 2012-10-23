@@ -1,7 +1,7 @@
 <h3>User Stats</h3> <br>
 <span>
   <ul>
-  <li>Number of Rides Completed: <%= rides_completed(current_user)  %> </li>
-  <li>Number of Upcoming rides: <%= rides_upcoming(current_user) %> </li>
+  <li>Number of Rides Completed: <%= current_user.completed_rides  %> </li>
+  <li>Number of Upcoming rides: <%= current_user.upcoming_rides %> </li>
   </ul>
 </span>
