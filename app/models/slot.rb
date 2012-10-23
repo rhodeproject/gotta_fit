@@ -88,7 +88,7 @@ class Slot < ActiveRecord::Base
     if list.count > 0
       list[0].update_attribute('state', 'Signed Up')
       user.remove_ride
-      UserMailer.wait_list_notice(@list[0].user, self).deliver
+      UserMailer.wait_list_notice(list[0].user, self).deliver
     end
     UserMailer.user_slot_sign_up(user,self).deliver
   end
