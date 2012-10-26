@@ -12,6 +12,7 @@ $(document).ready(function(){
     $('#recCount').hide();
     $('#lblRecCount').hide();
     $('#btnSession').hide();
+    $('.edit_slot').hide();
 
     /*Add User for Admin*/
     $('#btnAdminAddUser').click(function(event){
@@ -169,5 +170,6 @@ function currentSlot(sDate, sTime){
     window.console && console.log(slotDate);
     if (dDate < slotDate){
         $('#btnSession').show();
+        $('.edit_slot').fadeIn();
     };
 }
