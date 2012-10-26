@@ -20,7 +20,12 @@
           <td><%= slot.spots %></td>
           <td><%= slot.available_spots %></td>
           <td><%= slot.waiting %></td>
-          <td><%= link_to 'View Details', slot%></td>
+          <td>
+            <%= link_to 'View Details', slot%>
+            <% if current_user.admin? %>
+               | <%= link_to "Remove", slot,:id => "slotRemove" ,:confirm => "Are you sure?", :method => :delete %>
+            <% end %>
+          </td>
         </tr>
     <% end %>
     </tbody>

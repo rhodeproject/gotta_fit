@@ -1,7 +1,9 @@
 <%= provide(:title, 'Edit User') %>
-<h1>Sign Up</h1>
+
 <div class="row">
   <div class="span4 offset4">
+    <h4>Edit Account: <%= @user.first_name %> <%= @user.last_name %></h4>
+    <h4>ID: <%= @user.id %></h4>
     <%= form_for (@user) do |f| %>
         <%= render 'shared/errors', object: f.object %>
         <%= f.label :first_name %>

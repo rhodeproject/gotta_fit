@@ -10,14 +10,13 @@
 </head>
 <body>
 <%= render 'layouts/header' %>
-<div id="flash"></div>
 <div class="container">
   <% flash.each do |key, value| %>
 
       <!--Alnernate way of displaying flash, this is less clean
       <div class="alert alert-<%= key %>"><%= value %></div>-->
 
-      <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+      <%= content_tag(:div, value, id: "flash_message",class: "alert alert-#{key}") %>
   <% end %>
   <%= yield %>
   <%= render 'layouts/footer' %>

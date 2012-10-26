@@ -16,6 +16,10 @@
 //= require fullcalendar
 //= require dataTables/jquery.dataTables
 //= require_tree .
+$(document).ready(function(){
+    $("#flash_message").delay(5000).fadeOut(1000);
+});
+
 
 
 

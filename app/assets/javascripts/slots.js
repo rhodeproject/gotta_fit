@@ -13,6 +13,21 @@ $(document).ready(function(){
     $('#lblRecCount').hide();
     $('#btnSession').hide();
 
+    /*Add User for Admin*/
+    $('#btnAdminAddUser').click(function(event){
+       $('#adminAddUser').dialog('open');
+        return false;
+    });
+
+    $('#adminAddUser').dialog({
+        title: "select a user",
+        autoOpen: false,
+        open: {effect: "fadeIn", duration: 500},
+        height: 150,
+        width: 300,
+        modal: true
+    });
+
     if ($('#slotDate').length > 0 && $('#slotTime').length > 0) {
         currentSlot($('#slotDate').val(),$('#slotTime').val());
     }

@@ -21,6 +21,13 @@ class SlotsController < ApplicationController
       end
     end
 
+    if params[:commit] == "add rider"
+      @slot = Slot.find(params[:id])
+      user = User.find(params[:all][:users])
+      flash[:success] = @slot.add_user(user)
+      redirect_to @slot
+    end
+
     #Remove user from Slot/Session
     if params[:commit] == "Remove Me"
       if signed_up?
@@ -60,6 +67,10 @@ class SlotsController < ApplicationController
   end
 
   def destroy
+    @remove = Slot.find(params[:id])
+    @remove.destroy
+    flash[:warning] = "Rider Session removed"
+    redirect_to slots_path
   end
 
   def calendar
@@ -118,8 +129,8 @@ class SlotsController < ApplicationController
     if signed_in?
       @slot = Slot.find(params[:id])
       @riders = @slot.users.order('created_at ASC')
-      @signedup = @slot.lists.where(:state => 'Signed Up')
-      @waiting = @slot.lists.where(:state => 'Waiting')
+      #@signedup = @slot.lists.where(:state => 'Signed Up')
+      #@waiting = @slot.lists.where(:state => 'Waiting')
     else
       flash[:warning] = "You must be signed in to view this!"
       redirect_to root_path

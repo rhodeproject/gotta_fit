@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   attr_accessible :admin, :email, :first_name, :last_name, :password, :password_confirmation
   has_secure_password
   #has_and_belongs_to_many  :slots
-  has_many :lists
+  has_many :lists, dependent: :destroy
   has_many :slots, :through => :lists
 
   #constants
@@ -87,6 +87,10 @@ class User < ActiveRecord::Base
 
   def send_confirm(user)
     UserMailer.new_user_confirmation(user).deliver
+  end
+
+  def name
+    "#{self.first_name} #{self.last_name}"
   end
 end
 
