@@ -22,9 +22,10 @@ namespace :riders do
 
         #loop through all user
         users.each do |u|
-          #TODO: only send email to users who are not on the waiting list
-          puts "sending an email to #{u.first_name} #{u.last_name}" if args.console == "console"
-          UserMailer.reminder_email(u,s).deliver
+          if u.get_slot_state(s.id) != "Waiting"
+            puts "sending an email to #{u.first_name} #{u.last_name}" if args.console == "console"
+            UserMailer.reminder_email(u,s).deliver
+          end
         end
       end
     end
