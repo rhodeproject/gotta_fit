@@ -90,7 +90,7 @@ class Slot < ActiveRecord::Base
       user.remove_ride
       UserMailer.wait_list_notice(list[0].user, self).deliver
     end
-    UserMailer.user_slot_sign_up(user,self).deliver
+    #UserMailer.user_slot_sign_up(user,self).deliver
   end
 
   def convertdate(sdate)

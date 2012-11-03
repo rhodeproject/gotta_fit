@@ -1,5 +1,6 @@
 class UserMailer < ActionMailer::Base
-  default from: "therhodeproject@gmail.com"
+  default from: "trifitlab@ttbikefit.com"
+  default reply_to: "trifitlab@ttbikefit.com"
 
   def wait_list_notice(user, slot)
     @user = user
