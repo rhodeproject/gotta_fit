@@ -9,6 +9,7 @@ gem 'fullcalendar-rails'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.5'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'whenever', :require => false
 gem 'bullet', group: :development
 
 group :assets do
