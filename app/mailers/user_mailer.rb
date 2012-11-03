@@ -18,13 +18,8 @@ class UserMailer < ActionMailer::Base
   def reminder_email(user, slot)
     @user = user
     @slot = slot
-    if Rails.env.development?
-      address = "mhatch73@gmail.com"
-      subject = "---Test-#{@user.email}-- TriFit Lab Reminder"
-    else
-      address = @user.email
-      subject = "TriFit Lab - TriFit Lab Reminder!"
-    end
+    address = @user.email
+    subject = "TriFit Lab - TriFit Lab Reminder!"
     mail(:to => address, :subject => subject)
   end
 
