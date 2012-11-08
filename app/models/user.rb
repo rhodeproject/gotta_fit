@@ -71,6 +71,10 @@ class User < ActiveRecord::Base
     self.slots.where("date >= ?", Date.today).limit(3).order("date, start_time ASC")
   end
 
+  def name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   #private methods for the user model
   private
   def create_remember_token
@@ -87,10 +91,6 @@ class User < ActiveRecord::Base
 
   def send_confirm(user)
     UserMailer.new_user_confirmation(user).deliver
-  end
-
-  def name
-    "#{self.first_name} #{self.last_name}"
   end
 end
 

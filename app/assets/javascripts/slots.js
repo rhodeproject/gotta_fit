@@ -14,6 +14,10 @@ $(document).ready(function(){
     $('#btnSession').hide();
     $('.edit_slot').hide();
 
+    $('#showSlotEdit').click(function(event){
+        $('.edit_slot').slideToggle(100);
+    });
+
     /*Add User for Admin*/
     $('#btnAdminAddUser').click(function(event){
        $('#adminAddUser').dialog('open');

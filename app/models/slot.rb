@@ -16,9 +16,10 @@ class Slot < ActiveRecord::Base
   has_many  :lists, dependent: :destroy
   has_many  :users, :through => :lists
 
-  before_save {|slot| slot.date = convertdate(date)}
+  before_create {|slot| slot.date = convertdate(date)}
   before_save {|slot| slot.start_time = converttime(start_time)}
   before_save {|slot| slot.end_time = converttime(end_time)}
+  after_update :update_lists
 
   #constants
   VALID_DATE_REGEX = /\d{2}\/\d{2}\/\d{4}/
@@ -48,9 +49,11 @@ class Slot < ActiveRecord::Base
     end
     if self.users.delete(user)
       user.add_ride
-      message = "You have been removed from this session"
+      flash = "#{user.name} has been removed from this session"
+    else
+      flash = "There was a problem removing #{user.name} from this session"
     end
-    message
+    flash
   end
 
   def add_user(user)
@@ -64,7 +67,7 @@ class Slot < ActiveRecord::Base
       @list.update_attribute('state', state)
       user.remove_ride unless state == "Waiting"
       UserMailer.user_slot_sign_up(user,self).deliver
-      flash  = "You are #{state} for session!"
+      flash  = "#{user.name} is #{state} for session!"
     else
       flash = "There was an issue adding you to the Multi-rider session"
     end
@@ -81,6 +84,10 @@ class Slot < ActiveRecord::Base
     self.lists.where(:state => "Waiting").count
   end
 
+  def signed_up?(user)
+    self.users.where(:id => user.id).present?
+  end
+
   private
 
   def check_wait_list(user)
@@ -90,7 +97,6 @@ class Slot < ActiveRecord::Base
       user.remove_ride
       UserMailer.wait_list_notice(list[0].user, self).deliver
     end
-    #UserMailer.user_slot_sign_up(user,self).deliver
   end
 
   def convertdate(sdate)
@@ -104,6 +110,18 @@ class Slot < ActiveRecord::Base
 
   def self.format_date(date_time)
     Time.at(date_time.to_i).to_formatted_s(:db)
+  end
+
+  def update_lists
+    i = 0
+    if self.available_spots > 0 && self.waiting > 0
+      list = self.lists.where(:state => "Waiting").order('updated_at ASC')
+      while i < self.available_spots do
+        check_wait_list(list[i].user)
+      end
+    elsif  self.available_spots < 0
+      #add some logic here
+    end
   end
 
 end

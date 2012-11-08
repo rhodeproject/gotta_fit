@@ -4,47 +4,45 @@ class SlotsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
-
+    @slot = Slot.find(params[:id])
   end
 
   def update
-    #Add user to Slot/Session
-    if params[:commit] == "Add Me" || params[:commit] == "Join Waiting List"
+    @slot = Slot.find(params[:id])
+    if params[:commit] == "Add Me" || params[:commit] == "Join Waiting List" #user adds themselves
       if signed_up?
         flash[:warning] = "you are already signed up for this session"
-        redirect_to @slot
       else
-        @slot = Slot.find(params[:id])
         flash[:success] = @slot.add_user(current_user)
-        redirect_to @slot
       end
-    end
-
-    if params[:commit] == "add rider"
-      @slot = Slot.find(params[:id])
+    elsif params[:commit] == "add/remove rider" #admin adds/removes another user
       user = User.find(params[:all][:users])
-      flash[:success] = @slot.add_user(user)
-      redirect_to @slot
-    end
-
-    #Remove user from Slot/Session
-    if params[:commit] == "Remove Me"
+      if @slot.signed_up?(user)
+        flash[:success] = @slot.remove_user(user)
+      else
+        flash[:success] = @slot.add_user(user)
+      end
+    elsif params[:commit] == "Remove Me" #remove user
       if signed_up?
         flash[:success] =  @slot.remove_user(current_user)
-        redirect_to @slot
       else
         flash[:notice] = "You are not signed up"
-        redirect_to @slot
       end
+    else
+      #update the slot data
+      @slot.update_attributes(:description => params[:slot][:description],
+                              :start_time => params[:slot][:start_time],
+                              :end_time => params[:slot][:end_time],
+                              :spots => params[:slot][:spots])
+
     end
+    redirect_to @slot
   end
 
   def create
     if current_user.admin?
       @slot = Slot.new(params[:slot])
       if @slot.save
-
         respond_to do |format|
           format.html {
             flash[:success] = "New rider session created"

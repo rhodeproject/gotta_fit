@@ -1,19 +1,37 @@
 require 'spec_helper'
 
 describe Slot do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @slot = Slot.new(:date => Date.today,
+                      :start_time => Time.now,
+                      :end_time => Time.now,
+                      :spots => 1)
+
+  end
+
+  it "should be valid with valid attributes" do
+    @slot.should be_valid
+  end
+
+  it "should not be valid with out date" do
+    @slot.date = nil
+    @slot.should_not be_valid
+  end
+
+  it "should not be valid without start_time" do
+    @slot.start_time = nil
+    @slot.should_not be_valid
+  end
+
+  it "should not be valid without end_time" do
+    @slot.end_time = nil
+    @slot.should_not be_valid
+  end
+
+  it "should not be valid without spots" do
+    @slot.spots = nil
+    @slot.should_not be_valid
+  end
 end
-# == Schema Information
-#
-# Table name: slots
-#
-#  id         :integer         not null, primary key
-#  date       :string(255)
-#  start_time :string(255)
-#  end_time   :string(255)
-#  waiting    :boolean
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#  spots      :integer
-#
+
 

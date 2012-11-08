@@ -1,2 +1,29 @@
-<h1>Slots#edit</h1>
-<p>Find me in app/views/slots/edit.html.erb</p>
+<%= provide(:title, 'Edit Slot') %>
+<div class="row">
+  <div class="span12">
+    <h4><%= @slot.description %></h4>
+    <%= link_to "[show details...]", '#', id: "showSlotEdit" %>
+  </div>
+</div>
+<hr class="style-four">
+<div class="row">
+  <div class="span12">
+    <%= form_for @slot, id: "slot_edit" do |f| %>
+        <%= render 'shared/errors', object: f.object %>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+
+        <%= f.label :start_time %>
+        <%= f.text_field :start_time %>
+
+        <%= f.label :end_time %>
+        <%= f.text_field :end_time %>
+
+        <%= f.label :spots %>
+        <%= f.text_field :spots %>
+        <br>
+        <%= f.submit "Update", class: "btn btn-large btn-primary" %>
+
+    <% end %>
+  </div>
+</div>

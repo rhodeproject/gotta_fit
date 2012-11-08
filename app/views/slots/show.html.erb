@@ -1,5 +1,31 @@
-<h1>Multi-rider session Details</h1>
-<h2><%= showday(@slot.date) %> Session at <%= showtime(@slot.start_time) %></h2>
+<% provide(:title, 'session')%>
+<br>
+<div class="row span12">
+  <h3><%= @slot.description %></h3>
+</div><hr>
+<div class="row span12">
+  <em>Day:</em> <strong><%= showday(@slot.date) %> </strong>
+</div><br>
+<div class="row span12">
+  <em>Start:</em> <strong><%= showtime(@slot.start_time) %> </strong>
+</div><br>
+<div class="row span12">
+  <em>Start:</em> <strong><%= showtime(@slot.end_time) %> </strong>
+</div>
+<br>
+<div class="row span12">
+  <em>Total Spots:</em> <strong><%= @slot.spots %> </strong>
+</div>
+<br>
+<div class="row span12">
+  <em>Spots Available:</em> <strong><%= @slot.available_spots %> </strong>
+</div>
+<br>
+<div class="row span5">
+  <%= link_to 'Edit', edit_slot_path(@slot) %> |
+  <%= link_to 'Back', slots_path %>
+</div>
+<hr class="style-four">
 <input type="hidden" id="slotDate" value=<%= @slot.date %>>
 <input type="hidden" id="slotTime" value=<%= @slot.start_time %>>
 <div class="container">
@@ -46,7 +72,7 @@
                     <%= u.submit "Add Me", class: "btn btn-primary", id: "btnSession" %>
                 <% end %>
             <% end %>
-            <% if current_user.admin? %>-or- <%= link_to "add a rider","#", id: "btnAdminAddUser", class: "btn btn-primary"  %><% end %>
+            <% if current_user.admin? %>-or- <%= link_to "add/remove a rider","#", id: "btnAdminAddUser", class: "btn btn-primary"  %><% end %>
         <% end %>
         <% if current_user.admin? %><%= render 'admin_add_user'%><% end %>
 

@@ -23,6 +23,12 @@ class UserMailer < ActionMailer::Base
     mail(:to => address, :subject => subject)
   end
 
+  def admin_task(taskname, count)
+    @taskname = taskname
+    @count = count
+    mail(:to => "matthew.hatch@rhodeproject.com", :subject => "gotta fit reminder")
+  end
+
   def new_user_confirmation(user)
     @user = user
     if Rails.env.development?

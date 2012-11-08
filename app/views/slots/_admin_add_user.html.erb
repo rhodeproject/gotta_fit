@@ -2,6 +2,6 @@
 <div id="adminAddUser">
   <%= form_for @slot do |f| %>
      <%= collection_select(:all, :users, User.all, :id, :name) %>
-     <%= f.submit "add rider", class: "btn btn-primary" %>
+     <%= f.submit "add/remove rider", class: "btn btn-primary" %>
   <% end %>
 </div>

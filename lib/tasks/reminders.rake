@@ -10,9 +10,9 @@ namespace :riders do
       puts "** starting rider reminder ***" if args.console == "console"
       puts "******************************" if args.console == "console"
 
-      #retreive all slots that for tomorrow whose status is signed up
+      #retreive all slots for tomorrow whose status is signed up
       slots = Slot.all(:conditions => ['date = ?', Date.today + 1])
-
+      count = 0
       #loop through all slots
       slots.each do |s|
         puts "checking slot starting at #{s.start_time}" if args.console == "console"
@@ -23,10 +23,12 @@ namespace :riders do
         #loop through all user
         users.each do |u|
           if u.get_slot_state(s.id) != "Waiting"
+            count += 1
             puts "sending an email to #{u.first_name} #{u.last_name}" if args.console == "console"
             UserMailer.reminder_email(u,s).deliver
           end
         end
       end
+      UserMailer.admin_task("riders:reminders",count).deliver
     end
 end
