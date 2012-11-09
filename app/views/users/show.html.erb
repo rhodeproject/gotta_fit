@@ -1,15 +1,13 @@
 <% provide(:title, @user.first_name) %>
-<div class="row">
-  <aside class="span2">
-    <section>
-      <h1>
+<div class="row-fluid">
+
+      <h4>
        <%= @user.first_name %>
-      </h1>
-    </section>
-  </aside>
+      </h4>
+
   <% if @user.active? %>
       <div class="span8">
-        <h2>upcoming rides</h2>
+        <h4>upcoming rides</h4>
         <table class="table table-striped">
             <thead>
                 <th>Day</th>

@@ -1,6 +1,7 @@
 
 <% if signed_in? %>
     <div class="row-fluid">
+      <!--<aside class="span3">-->
       <aside class="span3">
         <section>
           <%= render 'shared/user_info' %>
@@ -13,13 +14,14 @@
         </section>
 
       </aside>
-      <div class="span9">
+      <!--<div class="span9">-->
+      <div class="span7">
         <img src="/assets/trifitlab_fuzzy.png"/>
         <%= render 'shared/message' %>
       </div>
     </div>
 <% else %>
-    <div class="span10 offset1">
+    <div class="span10">
     <img src="/assets/trifitlab_fuzzy.png"/>
     <%= render 'shared/message' %>
     </div>

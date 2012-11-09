@@ -28,10 +28,6 @@
 <%= render 'layouts/header' %>
 <div class="container-fluid">
   <% flash.each do |key, value| %>
-
-      <!--Alnernate way of displaying flash, this is less clean
-      <div class="alert alert-<%= key %>"><%= value %></div>-->
-
       <%= content_tag(:div, value, id: "flash_message",class: "alert alert-#{key}") %>
   <% end %>
   <%= yield %>

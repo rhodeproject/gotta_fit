@@ -28,8 +28,9 @@
 <hr class="style-four">
 <input type="hidden" id="slotDate" value=<%= @slot.date %>>
 <input type="hidden" id="slotTime" value=<%= @slot.start_time %>>
-<div class="container">
-  <div class="span10 offset1">
+<!--<div class="container">-->
+  <!--<div class="span10 offset1">-->
+  <div class="span10">
     <table class="table table-condensed table-striped" id="tblSlot">
       <thead>
         <th>Name</th>
@@ -77,4 +78,4 @@
         <% if current_user.admin? %><%= render 'admin_add_user'%><% end %>
 
   </div>
-</div>
+<!--</div>-->
