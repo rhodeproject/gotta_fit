@@ -21,10 +21,12 @@
   <em>Spots Available:</em> <strong><%= @slot.available_spots %> </strong>
 </div>
 <br>
+<% if current_user.admin? %>
 <div class="row span5">
   <%= link_to 'Edit', edit_slot_path(@slot) %> |
   <%= link_to 'Back', slots_path %>
 </div>
+<% end %>
 <hr class="style-four">
 <input type="hidden" id="slotDate" value=<%= @slot.date %>>
 <input type="hidden" id="slotTime" value=<%= @slot.start_time %>>

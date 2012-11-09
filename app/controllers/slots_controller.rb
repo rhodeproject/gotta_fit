@@ -30,11 +30,15 @@ class SlotsController < ApplicationController
       end
     else
       #update the slot data
-      @slot.update_attributes(:description => params[:slot][:description],
-                              :start_time => params[:slot][:start_time],
-                              :end_time => params[:slot][:end_time],
-                              :spots => params[:slot][:spots])
-
+      if current_user.admin?
+        @slot.update_attributes(:description => params[:slot][:description],
+                                :start_time => params[:slot][:start_time],
+                                :end_time => params[:slot][:end_time],
+                                :spots => params[:slot][:spots])
+        flash[:success] = "update successful"
+      else
+        flash[:information] = "insufficient privileges to make the change"
+      end
     end
     redirect_to @slot
   end
