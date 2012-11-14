@@ -2,3 +2,7 @@
 every 1.day, :at => '5:30 pm' do
   rake "riders:reminders"
 end
+
+every 1.day, :at => '11:59 pm' do
+  rake "riders:reminders"
+end

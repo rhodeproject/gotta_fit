@@ -67,6 +67,16 @@ class User < ActiveRecord::Base
     list.state
   end
 
+  def reminder_sent?(slot_id)
+    list = self.lists.find_by_slot_id(slot_id)
+    list.reminder_sent
+  end
+
+  def update_reminder_sent(slot_id)
+    list = self.lists.find_by_slot_id(slot_id)
+    list.update_attribute('reminder_sent', true)
+  end
+
   def rides
     self.slots.where("date >= ?", Date.today).limit(3).order("date, start_time ASC")
   end

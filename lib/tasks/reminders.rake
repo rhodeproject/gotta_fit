@@ -22,10 +22,12 @@ namespace :riders do
 
         #loop through all user
         users.each do |u|
-          if u.get_slot_state(s.id) != "Waiting"
+          if u.get_slot_state(s.id) != "Waiting" && !u.reminder_sent?(s.id)
             count += 1
             puts "sending an email to #{u.first_name} #{u.last_name}" if args.console == "console"
-            UserMailer.reminder_email(u,s).deliver
+            if UserMailer.reminder_email(u,s).deliver
+               u.update_reminder_sent(s.id)
+            end
           end
         end
       end
