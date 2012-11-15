@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   attr_accessible :admin, :email, :first_name, :last_name, :password, :password_confirmation
   has_secure_password
   #has_and_belongs_to_many  :slots
-  has_many :lists, dependent: :destroy
+  has_many :lists, :dependent => :destroy
   has_many :slots, :through => :lists
 
   #constants
@@ -32,13 +32,13 @@ class User < ActiveRecord::Base
   after_create :set_rides
 
   #validation
-  validates :first_name, presence: true, length:{maximum: 50} #first_name must exist and cannot exceed 50 characters
-  validates :last_name, presence: true, length:{maximum: 50} #last_name must exist and cannot exceed 50 characters
-  validates :email, presence: true,
-            format: {with: VALID_EMAIL_REGEX},
-            uniqueness: {case_sensative: false} #email must exist, match the Regex for validate form, and must be unique
-  validates :password, presence: true, length:{minimum: 6} #password must exist and be at least 6 characters
-  validates :password_confirmation, presence: true
+  validates :first_name, :presence => true, :length => {:maximum => 50} #first_name must exist and cannot exceed 50 characters
+  validates :last_name, :presence => true, :length => {:maximum => 50} #last_name must exist and cannot exceed 50 characters
+  validates :email, :presence => true,
+            :format => {:with => VALID_EMAIL_REGEX},
+            :uniqueness => {:case_sensative => false} #email must exist, match the Regex for validate form, and must be unique
+  validates :password, :presence => true, :length => {:minimum => 6} #password must exist and be at least 6 characters
+  validates :password_confirmation, :presence => true
 
   def send_password_reset
     self.update_attribute('reset_token', generate_token)

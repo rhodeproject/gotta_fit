@@ -13,7 +13,7 @@
 #
 class Slot < ActiveRecord::Base
   attr_accessible :date, :end_time, :start_time, :waiting, :spots, :description
-  has_many  :lists, dependent: :destroy
+  has_many  :lists, :dependent => :destroy
   has_many  :users, :through => :lists
 
   before_create {|slot| slot.date = convertdate(date)}

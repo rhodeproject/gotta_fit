@@ -1,0 +1,4 @@
+LOG:  database system was shut down at 2012-11-14 06:59:43 EST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "gotta_fit" does not exist
