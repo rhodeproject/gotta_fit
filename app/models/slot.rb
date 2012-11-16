@@ -35,7 +35,7 @@ class Slot < ActiveRecord::Base
   scope :by_week, lambda { |d| {:conditions =>  {:date => d.beginning_of_week..d.end_of_week}}}
   scope :by_month, lambda { |d| {:conditions => {:date => d.beginning_of_month..d.end_of_month}}}
   scope :by_day, lambda {|d| {:conditions => {:date => d}}}
-  scope :by_next_week, lambda {|d| {:conditions => {:date => d.beginning_of_week.next_week..d.end_of_week.next_week}}}
+  scope :by_next_week, lambda { |d| {:conditions =>  {:date => d.beginning_of_week.next_week..d.end_of_week.next_week}}}
   scope :by_next_month, lambda {|d| {:conditions => {:date => d.beginning_of_month.next_month..d.end_of_month.next_month}}}
   scope :by_tomorrow, lambda {|d| {:conditions => {:date => d.tomorrow}}}
 

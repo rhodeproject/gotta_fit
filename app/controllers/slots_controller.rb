@@ -77,7 +77,7 @@ class SlotsController < ApplicationController
 
   def calendar
     @slots = Slot.all
-    @slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time ASC').by_month Date.today
+    @slots = Slot.paginate(:page =>  params[:page], :per_page => 7).order('date, start_time ASC').by_month Date.today
 
     respond_to do |format|
       format.html  { render :html => @slots}
@@ -99,16 +99,16 @@ class SlotsController < ApplicationController
           @slots = Slot.order('date, start_time ASC').by_month Date.today
         when "daily"
           #@slots = Slot.paginate(page: params[:page], :per_page => 7).order('start_time ASC').by_day Date.today
-          @slots = Slot.order('start_time ASC').by_day Date.today
+          @slots = Slot.order('date, start_time ASC').by_day Date.today
         when "next_week"
           #@slots = Slot.paginate(page: params[:page], :per_page => 7).order('start_time ASC').by_next_week Date.today
-          @slots = Slot.order('start_time ASC').by_next_week Date.today
+          @slots = Slot.order('date, start_time ASC').by_week(Date.today + 7.days)
         when "next_month"
           #@slots = Slot.paginate(page: params[:page], :per_page => 7).order('start_time ASC').by_next_month Date.today
-          @slots = Slot.order('start_time ASC').by_next_month Date.today
+          @slots = Slot.order('date, start_time ASC').by_next_month Date.today
         when "tomorrow"
           #@slots = Slot.paginate(page: params[:page], :per_page => 7).order('start_time ASC').by_tomorrow Date.today
-          @slots = Slot.order('start_time ASC').by_tomorrow Date.today
+          @slots = Slot.order('date, start_time ASC').by_tomorrow Date.today
         else
           #@slots = Slot.paginate(page: params[:page], :per_page => 7).order('date, start_time ASC')
           @slots = Slot.all(:order => "date, start_time DESC")
