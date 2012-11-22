@@ -36,8 +36,8 @@ describe Slot do
   describe "by_next_week scope" do
     it "should return all slots that are scheduled for next week" do
       @slot.date = Date.today.next_week
-      next_week = Slot.by_next_week
-      next_week.should include(@slot)
+      next_week = Slot.by_week(Date.today + 7)
+      next_week.should = @slot
     end
   end
 end

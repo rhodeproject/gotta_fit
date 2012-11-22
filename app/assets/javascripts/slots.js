@@ -134,8 +134,7 @@ function submitAjax(sDesc,sDay,sDate,sTime,eTime,sPots){
         error: function(e){
           alert('There was problem saving the session');
         },
-        success: function(){
-            $('.alert').append('New Rider Session Added');
+        success: function(data){
             $('#tblPreviewSlots').append(
                 '<tr><td>'+sDay+" "+sDate+'</td><td>'
                     +sDesc+'</td><td>'
@@ -146,7 +145,8 @@ function submitAjax(sDesc,sDay,sDate,sTime,eTime,sPots){
                     '<td></td></tr>'
             ).fadeIn("slow");
         },
-        dataType: "JSON"
+        dataType: "JSON",
+        async: false
     });
 }
 

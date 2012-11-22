@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def index
     if signed_in? && current_user.admin?
-      @users = User.paginate(:page => params[:page], :per_page => 10)
+      @users = User.all#paginate(:page => params[:page], :per_page => 10)
     else
       flash[:warning] = "You must be an administrator to perform this action"
     end

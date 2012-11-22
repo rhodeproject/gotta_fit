@@ -8,7 +8,7 @@ development:
   password:
 
 
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   database: gotta_fit_test
@@ -17,3 +17,6 @@ test:
   password:
 
 
+
+cucumber:
+  <<: *test

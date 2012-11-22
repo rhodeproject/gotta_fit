@@ -1,6 +1,11 @@
 class UserMailer < ActionMailer::Base
-  default from: "trifitlab@ttbikefit.com"
-  default reply_to: "trifitlab@ttbikefit.com"
+  default :from => "trifitlab@ttbikefit.com"
+  default :reply_to => "trifitlab@ttbikefit.com"
+
+  def nightly_user_count(users)
+    @users = users
+    mail(:to => 'matthew.hatch@rhodeproject.com', :subject => "User count")
+  end
 
   def wait_list_notice(user, slot)
     @user = user

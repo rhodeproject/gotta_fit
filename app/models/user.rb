@@ -40,6 +40,10 @@ class User < ActiveRecord::Base
   validates :password, :presence => true, :length => {:minimum => 6} #password must exist and be at least 6 characters
   validates :password_confirmation, :presence => true
 
+  #scopes
+  scope :by_last_name, {:order => "last_name ASC"}
+  scope :by_first_name, {:order => "first_name ASC"}
+
   def send_password_reset
     self.update_attribute('reset_token', generate_token)
     self.update_attribute('password_reset_sent_at', Time.zone.now)

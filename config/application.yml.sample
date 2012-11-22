@@ -1,0 +1,20 @@
+#This is a sample application.yml file
+#create rename this file and replace the values
+
+APP_ID: "APPLICATION_SECRET_TOKEN"
+development:
+  EMAIL_GATEWAY: "smtp.gmail.com"
+  EMAIL_PORT: "587"
+  EMAIL_DOMAIN: "dev_sample.com"
+  EMAIL_USER: "dev_foo"
+  EMAIL_PASSWORD: dev_foobar"
+  BASE_URL: "http://localhost:3000"
+
+
+development:
+  EMAIL_GATEWAY: "smtp.gmail.com"
+  EMAIL_PORT: "587"
+  EMAIL_DOMAIN: "sample.com"
+  EMAIL_USER: "foo"
+  EMAIL_PASSWORD: "foobar"
+  BASE_URL: "http://www.gottafit.com"

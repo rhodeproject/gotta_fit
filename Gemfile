@@ -8,9 +8,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'fullcalendar-rails'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.5'
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-datatables-rails', :github => 'rweng/jquery-datatables-rails'
+gem 'figaro'
 gem 'whenever', :require => false
-gem 'bullet', group: :development
+gem 'bullet', :group => :development
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -20,11 +21,17 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'minitest'
-  gem 'capybara'
-  gem 'factory_girl_rails'
+  gem 'webrat'
+end
+
+group :test do
+  gem "factory_girl_rails"
+  gem "cucumber-rails"
+  gem "database_cleaner"
 end
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+
+
 

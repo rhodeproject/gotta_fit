@@ -1,11 +1,10 @@
 ActionMailer::Base.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => "587",
-    :domain               => "gmail.com",
-    :user_name            => "therhodeproject",
-    :password             => "Cas$idy1",
+    :address              => Figaro.env.email_gateway,
+    :port                 => Figaro.env.email_port,
+    :domain               => Figaro.env.email_domain,
+    :user_name            => Figaro.env.email_user,
+    :password             => Figaro.env.email_password,
     :enable_starttls_auto => true
-
 }
 
 
