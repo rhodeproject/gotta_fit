@@ -1,5 +1,5 @@
 namespace :nightly do
-  describe "nightly jobs"
+  desc 'nightly jobs'
     task :new_users, [:email] => :environment do |t, args|
       @users = User.find_by_created_at(Date.today)
       if args.email == "email"
