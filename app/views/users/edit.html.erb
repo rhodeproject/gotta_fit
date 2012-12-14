@@ -5,7 +5,7 @@
     <h4>Edit Account: <%= @user.first_name %> <%= @user.last_name %></h4>
     <h4>ID: <%= @user.id %></h4>
     <%= form_for (@user) do |f| %>
-        <%= render 'shared/errors', object: f.object %>
+        <%= render 'shared/errors', :object => f.object %>
         <%= f.label :first_name %>
         <%= f.text_field :first_name %>
 
@@ -18,9 +18,10 @@
         <%= f.label :purchased_rides %>
         <%= f.text_field :purchased_rides %>
 
-        <%= f.label :admin, "admin?" %><%= f.check_box :admin, id: "chkAdmin"%>
+        <%= f.label :admin, "admin?" %><%= f.check_box :admin, :id => "chkAdmin"%>
         <br>
-        <%= f.submit "Update Account", class: "btn btn-primary" %>
+        <br>
+        <%= f.submit "Update Account", :class => "btn btn-primary" %>
     <% end %>
   </div>
 </div>

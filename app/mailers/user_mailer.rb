@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
-  default :from => "trifitlab@ttbikefit.com"
-  default :reply_to => "trifitlab@ttbikefit.com"
+  default :from => Figaro.env.email_from
+  default :reply_to => Figaro.env.email_reply_to
 
   def nightly_user_count(users)
     @users = users

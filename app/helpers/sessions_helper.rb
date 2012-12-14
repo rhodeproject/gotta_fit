@@ -1,8 +1,12 @@
 module SessionsHelper
+
   def sign_in(user)
     if user.active?
       cookies.permanent[:remember_token] = user.remember_token
       current_user = user
+      flash[:success] = "Welcome back #{user.first_name}"
+    else
+      flash[:warning] = "This account either does not exist or is inactive!"
     end
 
   end
@@ -40,7 +44,7 @@ module SessionsHelper
   def signed_in_user
     unless signed_in?
       store_location
-      redirect_to signin_path, notice: "Please sign in."
+      redirect_to signin_path, :notice => "Please sign in."
     end
   end
 

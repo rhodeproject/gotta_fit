@@ -1,12 +1,19 @@
+#All jobs that run nightly
+#They can be called bundle exec rake nightly:[task_name]
+#
+#new_user - will iterate through all users and count all the users added
+#   on the current date.  It will take an optional argument [:console]
+#   when the argument is passed to the task, the results will output to
+#   to the console and not send an email
+
 namespace :nightly do
   desc 'nightly jobs'
-    task :new_users, [:email] => :environment do |t, args|
+    task :new_users, [:console] => :environment do |t, args|
       @users = User.find_by_created_at(Date.today)
-      if args.email == "email"
-        send_email unless @users.nil?
-      else
+      if args.console == "console"
         write_console unless @users.nil?
-        puts "All Done!"
+      else
+        send_email unless @users.nil?
       end
     end
 end

@@ -7,14 +7,17 @@ development:
   EMAIL_PORT: "587"
   EMAIL_DOMAIN: "dev_sample.com"
   EMAIL_USER: "dev_foo"
-  EMAIL_PASSWORD: dev_foobar"
+  EMAIL_PASSWORD: "dev_foobar"
+  EMAIL_REPLY_TO: "foo@bar.com"
+  EMAIL_FROM: "foo@bar.com"
   BASE_URL: "http://localhost:3000"
 
-
-development:
+production:
   EMAIL_GATEWAY: "smtp.gmail.com"
   EMAIL_PORT: "587"
   EMAIL_DOMAIN: "sample.com"
   EMAIL_USER: "foo"
   EMAIL_PASSWORD: "foobar"
+  EMAIL_REPLY_TO: "foo@bar.com"
+  EMAIL_FROM: "foo@bar.com"
   BASE_URL: "http://www.gottafit.com"

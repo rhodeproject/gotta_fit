@@ -13,7 +13,8 @@ $(document).ready(function(){
        "bLengthChange": false,
        "bFilter": false,
        "bInfo": true,
-       "bAutoWidth": false
+       "bAutoWidth": false,
+       "aaSorting": [[1, "asc"]]
    });
     $('#frmLogin').hide();
 

@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_filter :admin_check, :only => [:index, :destroy]
+  before_filter :sign_in_check, :only => :index
+
   def new
     @user = User.new
   end
@@ -16,11 +19,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    if signed_in? && current_user.admin?
-      @users = User.all#paginate(:page => params[:page], :per_page => 10)
-    else
-      flash[:warning] = "You must be an administrator to perform this action"
-    end
+    @users = User.order('last_name DESC')
   end
 
   def confirm()
@@ -66,5 +65,15 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:success] = "#{@user.first_name} #{@user.last_name} has been removed!"
     redirect_to users_path
+  end
+
+  private
+
+  def admin_check
+    flash[:warning] = "You must be an administrator to perform this action" unless current_user.admin?
+  end
+
+  def sign_in_check
+    flash[:warning] = "You are not signed in" unless signed_in?
   end
 end

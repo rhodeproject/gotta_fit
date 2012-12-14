@@ -67,15 +67,15 @@
     <br>
         <%= form_for @slot do |u|%>
             <% if signed_up?%>
-                <%= u.submit "Remove Me", class:"btn btn-primary", id: "btnSession"  %>
+                <%= u.submit "Remove Me", :class => "btn btn-primary", :id => "btnSession"  %>
             <% else %>
                 <% if @slot.available_spots == 0 %>
-                    <%= u.submit "Join Waiting List", class: "btn btn-primary", id: "btnSession" %>
+                    <%= u.submit "Join Waiting List", :class => "btn btn-primary", :id => "btnSession" %>
                 <% else %>
-                    <%= u.submit "Add Me", class: "btn btn-primary", id: "btnSession" %>
+                    <%= u.submit "Add Me", :class => "btn btn-primary", :id => "btnSession" %>
                 <% end %>
             <% end %>
-            <% if current_user.admin? %>-or- <%= link_to "add/remove a rider","#", id: "btnAdminAddUser", class: "btn btn-primary"  %><% end %>
+            <% if current_user.admin? %>-or- <%= link_to "add/remove a rider","#", :id => "btnAdminAddUser", :class => "btn btn-primary"  %><% end %>
         <% end %>
         <% if current_user.admin? %><%= render 'admin_add_user'%><% end %>
 
