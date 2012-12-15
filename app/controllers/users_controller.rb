@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user.confirm_code = SecureRandom.urlsafe_base64
     if @user.save
       flash["success"] = "Welcome #{@user.first_name}! Check you email in order to activate your account."
-      UserMailer.new_user_notice(@user).deliver
+      #UserMailer.new_user_notice(@user).deliver
       redirect_to root_path
     else
       render 'new'
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.order('last_name DESC')
+    @users = User.by_last_name
   end
 
   def confirm()

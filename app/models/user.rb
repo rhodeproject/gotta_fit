@@ -43,6 +43,7 @@ class User < ActiveRecord::Base
   #scopes
   scope :by_last_name, {:order => "last_name ASC"}
   scope :by_first_name, {:order => "first_name ASC"}
+  scope :signed_up_today, {:conditions => ["created_at between ? and ?", Date.today, Date.tomorrow]}
 
   def send_password_reset
     self.update_attribute('reset_token', generate_token)
