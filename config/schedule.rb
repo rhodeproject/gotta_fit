@@ -8,5 +8,5 @@ every 1.day, :at => '11:59 pm' do
 end
 
 every 1.day, :at => '11:58' do
-  rake "nightly:new_user"
+  rake "nightly:new_users"
 end
