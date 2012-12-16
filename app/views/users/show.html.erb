@@ -4,6 +4,9 @@
       <h4>
        <%= @user.first_name %>
       </h4>
+      <div class="row-fluid">
+        Purchased Rides Remaining: <%= @user.purchased_rides %>
+      </div>
 
   <% if @user.active? %>
       <div class="span8">
