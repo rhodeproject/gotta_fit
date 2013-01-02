@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
   scope :by_first_name, {:order => "first_name ASC"}
   scope :signed_up_today, {:conditions => ["created_at between ? and ?", Date.today, Date.tomorrow]}
 
+  def to_param
+    "#{id} #{name}".parameterize
+  end
+
   def send_password_reset
     self.update_attribute('reset_token', generate_token)
     self.update_attribute('password_reset_sent_at', Time.zone.now)

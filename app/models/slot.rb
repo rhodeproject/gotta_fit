@@ -42,6 +42,10 @@ class Slot < ActiveRecord::Base
   scope :before, lambda {|end_time| {:conditions => ["ends_time < ?", Slot.format_date(end_time)] }}
   scope :after, lambda {|start_time| {:conditions => ["starts_time > ?", Slot.format_date(start_time)] }}
 
+  def to_param
+    "#{id} #{description}".parameterize
+  end
+
   def remove_user(user)
     list = self.lists.where(:user_id => user.id)
     if list[0].state != "Waiting"
@@ -66,7 +70,7 @@ class Slot < ActiveRecord::Base
       @list = user.lists.find_by_slot_id(self.id)
       @list.update_attribute('state', state)
       user.remove_ride unless state == "Waiting"
-      UserMailer.user_slot_sign_up(user,self).deliver
+      UserMailer.user_slot_sign_up(user,self).deliver unless state == "Waiting"
       flash  = "#{user.name} is #{state} for session!"
     else
       flash = "There was an issue adding you to the Multi-rider session"
