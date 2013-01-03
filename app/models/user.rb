@@ -18,7 +18,7 @@
 class User < ActiveRecord::Base
   attr_accessible :admin, :email, :first_name, :last_name, :password, :password_confirmation
   has_secure_password
-  #has_and_belongs_to_many  :slots
+
   has_many :lists, :dependent => :destroy
   has_many :slots, :through => :lists
 

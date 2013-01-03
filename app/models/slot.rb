@@ -117,14 +117,19 @@ class Slot < ActiveRecord::Base
   end
 
   def update_lists
-    i = 0
+    #When a slot is edited, check to see if there are available slots
+    # and users on the waiting list, if so add waiting to signed up
+
+    #check if there are spots available and users waiting
     if self.available_spots > 0 && self.waiting > 0
-      list = self.lists.where(:state => "Waiting").order('updated_at ASC')
-      while i < self.available_spots do
-        check_wait_list(list[i].user)
+
+      #loop through until spots available are 0 and waiting count is 0
+      while self.available_spots > 0 && self.waiting > 0 do
+        #create an array of lists where state is waiting for this slot
+        #then pick the top one form the list
+        list = self.lists.where(:state => "Waiting").order('id ASC')
+        check_wait_list(list[0].user)
       end
-    elsif  self.available_spots < 0
-      #add some logic here
     end
   end
 
