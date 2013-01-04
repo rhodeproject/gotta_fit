@@ -71,7 +71,7 @@ $(document).ready(function(){
                 click: function(event){
                     if($('#recurring:checkbox').val() == 'true'){
                         addRecurringSlots();
-                        $('#preview').fadeIn('slow');
+                       // $('#preview').fadeIn('slow'); //this is used to add newly added slots to a preview table
                     }else{
                         var myDate = new Date($('#slot_date').val());
                         submitAjax($('#slot_description').val(),
@@ -80,7 +80,7 @@ $(document).ready(function(){
                             $('#slot_start_time').val(),
                             $('#slot_end_time').val(),
                             $('#slot_spots').val());
-                        $('#preview').fadeIn('slow');
+                       // $('#preview').fadeIn('slow'); //this is used to add newly added slots to a preview table
                     }
                     $(this).dialog("close");
                     return false;
@@ -136,14 +136,17 @@ function submitAjax(sDesc,sDay,sDate,sTime,eTime,sPots){
           alert('There was problem saving the session');
         },
         success: function(data){
-            $('#tblPreviewSlots').append(
+            //window.console && console.log(data);
+            $('#tblShowSlots').append(
                 '<tr><td>'+sDay+" "+sDate+'</td><td>'
-                    +sDesc+'</td><td>'
-                    +sTime+'</td><td>'
-                    +eTime+'</td><td>'
-                    +sPots+'</td><td>'
-                    +sPots+'</td><td>0</td>' +
-                    '<td></td></tr>'
+                    +data.description+'</td><td>'
+                    +formatTime(data.start_time)+'</td><td>'
+                    +formatTime(data.end_time)+'</td><td>'
+                    +data.spots+'</td><td>'
+                    +data.spots+'</td><td>0</td><td>'
+                    +'<a href="/slots/'+ data.id +'">View Details</a> | '
+                    +'<a data-method="delete" id="slotRemove" href="/slots/'+ data.id +'">Remove</a>'
+                    +'</td></tr>'
             ).fadeIn("slow");
         },
         dataType: "JSON",
@@ -177,4 +180,23 @@ function currentSlot(sDate, sTime){
         $('#btnSession').show();
         $('.edit_slot').fadeIn();
     };
+}
+
+//Convert 24 hour time to 12 hour AM/PM
+function formatTime(time){
+    //Incoming Time format hh:mm:ss
+    splitTime = time.split(":");
+    hour = splitTime[0];
+    minute = splitTime[1];
+
+    //Determine if the hour is AM or PM
+    if (hour > 12){
+        amPM = "PM"
+        hour = hour - 12
+    }else{
+        amPM = "AM"
+    }
+
+    //return time in hh:mm AM/PM
+    return hour +":" + minute + " " + amPM;
 }

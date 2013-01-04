@@ -122,9 +122,8 @@ class SlotsController < ApplicationController
   def show
     if signed_in?
       @slot = Slot.find(params[:id])
-      @riders = @slot.users.order('created_at ASC')
-      #@signedup = @slot.lists.where(:state => 'Signed Up')
-      #@waiting = @slot.lists.where(:state => 'Waiting')
+      @riders = @slot.signed_up.includes(:user)
+      @waiting = @slot.waiting_list.includes(:user)
     else
       flash[:warning] = "You must be signed in to view this!"
       redirect_to root_path

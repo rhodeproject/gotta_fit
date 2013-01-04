@@ -24,6 +24,9 @@ class Slot < ActiveRecord::Base
   #constants
   VALID_DATE_REGEX = /\d{2}\/\d{2}\/\d{4}/
   VALID_TIME_REGEX = /\d{2}\:\d{2}/
+  STATUS_WAITING = "Waiting"
+  STATUS_SIGNED_UP = "Signed Up"
+
 
   #validation
   validates :date, :presence => true
@@ -42,13 +45,24 @@ class Slot < ActiveRecord::Base
   scope :before, lambda {|end_time| {:conditions => ["ends_time < ?", Slot.format_date(end_time)] }}
   scope :after, lambda {|start_time| {:conditions => ["starts_time > ?", Slot.format_date(start_time)] }}
 
+  #scope :waiting_list, {:conditions => ["state = ? and slot_id = ?", "Waiting", self.id]}
+  #scope :signed_up, {:conditions => ["state = ? and slot_id = ?", "Signed Up", self.id]}
+
   def to_param
     "#{id} #{description}".parameterize
   end
 
+  def waiting_list
+    List.where(:state => STATUS_WAITING).where(:slot_id => self.id).order('id ASC')
+  end
+
+  def signed_up
+    List.where(:state => STATUS_SIGNED_UP).where(:slot_id => self.id).order('id ASC')
+  end
+
   def remove_user(user)
     list = self.lists.where(:user_id => user.id)
-    if list[0].state != "Waiting"
+    if list[0].state != STATUS_WAITING
       check_wait_list(user)
     end
     if self.users.delete(user)
@@ -62,15 +76,15 @@ class Slot < ActiveRecord::Base
 
   def add_user(user)
     if self.available_spots > 0
-      state = "Signed Up"
+      state = STATUS_SIGNED_UP
     else
-      state = "Waiting"
+      state = STATUS_WAITING
     end
     if self.users << user
       @list = user.lists.find_by_slot_id(self.id)
       @list.update_attribute('state', state)
-      user.remove_ride unless state == "Waiting"
-      UserMailer.user_slot_sign_up(user,self).deliver unless state == "Waiting"
+      user.remove_ride unless state == STATUS_WAITING
+      UserMailer.user_slot_sign_up(user,self).deliver unless state == STATUS_WAITING
       flash  = "#{user.name} is #{state} for session!"
     else
       flash = "There was an issue adding you to the Multi-rider session"
@@ -80,12 +94,12 @@ class Slot < ActiveRecord::Base
 
   def available_spots
     slot_count = self.spots
-    slots_taken = self.lists.where(:state => "Signed Up").count
+    slots_taken = self.lists.where(:state => STATUS_SIGNED_UP).count
     slot_count - slots_taken
   end
 
   def waiting
-    self.lists.where(:state => "Waiting").count
+    self.lists.where(:state => STATUS_WAITING).count
   end
 
   def signed_up?(user)
@@ -95,9 +109,9 @@ class Slot < ActiveRecord::Base
   private
 
   def check_wait_list(user)
-    list = self.lists.where(:state => "Waiting").order('updated_at ASC')
+    list = self.lists.where(:state => STATUS_WAITING).order('updated_at ASC')
     if list.count > 0
-      list[0].update_attribute('state', 'Signed Up')
+      list[0].update_attribute('state', STATUS_SIGNED_UP)
       user.remove_ride
       UserMailer.wait_list_notice(list[0].user, self).deliver
     end
@@ -127,7 +141,7 @@ class Slot < ActiveRecord::Base
       while self.available_spots > 0 && self.waiting > 0 do
         #create an array of lists where state is waiting for this slot
         #then pick the top one form the list
-        list = self.lists.where(:state => "Waiting").order('id ASC')
+        list = self.lists.where(:state => STATUS_WAITING).order('id ASC')
         check_wait_list(list[0].user)
       end
     end

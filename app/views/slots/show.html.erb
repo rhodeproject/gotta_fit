@@ -42,24 +42,20 @@
     </thead>
     <tbody>
       <% @riders.each_with_index do |r, i| %>
-          <% if r.get_slot_state(params[:id]) == "Signed Up" %>
           <tr>
-              <td><%= r.first_name %> <%= r.last_name %></td>
-              <% if current_user.admin? %><td><%= r.email %></td><% end %>
-              <td><%= r.completed_rides %></td>
-              <td><%= r.get_slot_state(params[:id])%></td>
+              <td><%= r.user.name %></td>
+              <% if current_user.admin? %><td><%= r.user.email %></td><% end %>
+              <td><%= r.user.completed_rides %></td>
+              <td><%= r.user.get_slot_state(params[:id])%></td>
           </tr>
-          <% end %>
       <% end %>
-      <% @riders.each_with_index do |r, i| %>
-        <% if r.get_slot_state(params[:id]) == "Waiting" %>
-            <tr>
-              <td><%= r.first_name %> <%= r.last_name %></td>
-              <% if current_user.admin? %><td><%= r.email %></td><% end %>
-              <td><%= r.completed_rides %></td>
-              <td><%= r.get_slot_state(params[:id])%></td>
-            </tr>
-        <% end %>
+      <% @waiting.each_with_index do |w, i| %>
+        <tr>
+          <td><%= w.user.name %></td>
+          <% if current_user.admin? %><td><%= w.user.email %></td><% end %>
+          <td><%= w.user.completed_rides %></td>
+          <td><%= w.user.get_slot_state(params[:id])%></td>
+        </tr>
     <% end %>
       </tbody>
       </table>
