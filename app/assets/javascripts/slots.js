@@ -138,7 +138,7 @@ function submitAjax(sDesc,sDay,sDate,sTime,eTime,sPots){
         success: function(data){
             //window.console && console.log(data);
             $('#tblShowSlots').append(
-                '<tr><td>'+sDay+" "+sDate+'</td><td>'
+                '<tr class="new_slot"><td>'+sDay+" "+sDate+'</td><td>'
                     +data.description+'</td><td>'
                     +formatTime(data.start_time)+'</td><td>'
                     +formatTime(data.end_time)+'</td><td>'
@@ -191,10 +191,10 @@ function formatTime(time){
 
     //Determine if the hour is AM or PM
     if (hour > 12){
-        amPM = "PM"
-        hour = hour - 12
+        amPM = "PM";
+        hour = hour - 12;
     }else{
-        amPM = "AM"
+        amPM = "AM";
     }
 
     //return time in hh:mm AM/PM

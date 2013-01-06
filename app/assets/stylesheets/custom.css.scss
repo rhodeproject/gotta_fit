@@ -1,6 +1,5 @@
 $grayMediumLight: #eaeaea;
 
-/*demo page css*/
 body{
   font: 75% "Trebuchet MS",sans-serif;
   margin: 50px;
@@ -148,4 +147,10 @@ hr.style-four {
   line-height:0;
   padding:0.1em 1.5em;
   position:relative;
+}
+
+//new slot
+tr.new_slot{
+  color: green;
+  font-style: italic;
 }

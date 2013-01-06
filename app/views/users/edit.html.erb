@@ -19,6 +19,8 @@
         <%= f.text_field :purchased_rides %>
 
         <%= f.label :admin, "admin?" %><%= f.check_box :admin, :id => "chkAdmin"%>
+        <%= f.label :active, "active?" %><%= f.check_box :active %>
+
         <br>
         <br>
         <%= f.submit "Update Account", :class => "btn btn-primary" %>

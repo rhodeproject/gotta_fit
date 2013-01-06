@@ -1,4 +1,7 @@
 class SlotsController < ApplicationController
+  before_filter :admin_check, :only => [:create, :update, :destroy]
+  before_filter :sign_in_check
+
   def new
     @slot = Slot.new
   end
@@ -30,41 +33,33 @@ class SlotsController < ApplicationController
       end
     else
       #update the slot data
-      if current_user.admin?
-        @slot.update_attributes(:description => params[:slot][:description],
-                                :start_time => params[:slot][:start_time],
-                                :end_time => params[:slot][:end_time],
-                                :spots => params[:slot][:spots])
-        flash[:success] = "update successful"
-      else
-        flash[:information] = "insufficient privileges to make the change"
-      end
+      @slot.update_attributes(:description => params[:slot][:description],
+                              :start_time => params[:slot][:start_time],
+                              :end_time => params[:slot][:end_time],
+                              :spots => params[:slot][:spots])
+      flash[:success] = "update successful"
     end
     redirect_to @slot
   end
 
   def create
-    if current_user.admin?
-      @slot = Slot.new(params[:slot])
-      if @slot.save
-        respond_to do |format|
-          format.html {
-            flash[:success] = "New rider session created"
-            redirect_to '/schedule/weekly'
-          }
-          format.json {render :json => @slot}
-        end
-      else
-        respond_to do |format|
-          format.html {
-            flash[:error] = "There was an issue creating the session"
-            redirect_to new_slot_path
-          }
-          format.js {render :json => @slot}
-        end
+    @slot = Slot.new(params[:slot])
+    if @slot.save
+      respond_to do |format|
+        format.html {
+          flash[:success] = "New rider session created"
+          redirect_to '/schedule/weekly'
+        }
+        format.json {render :json => @slot}
       end
     else
-      flash[:warning] = "You must be the site admin to add sessions"
+      respond_to do |format|
+        format.html {
+          flash[:error] = "There was an issue creating the session"
+          redirect_to new_slot_path
+        }
+        format.js {render :json => @slot}
+      end
     end
   end
 
@@ -72,7 +67,7 @@ class SlotsController < ApplicationController
     @remove = Slot.find(params[:id])
     @remove.destroy
     flash[:warning] = "Rider Session removed"
-    redirect_to slots_path
+    redirect_to '/schedule/weekly'
   end
 
   def calendar
@@ -88,44 +83,51 @@ class SlotsController < ApplicationController
 
   def index
     @slot = Slot.new
-    if signed_in?
-      #Detemine the View for Slots Monthly, Weekly, or Daily
-      case params[:view]
-        when "weekly"
-          @slots = Slot.order('date, start_time ASC').by_week Date.today
-        when "monthly"
-          @slots = Slot.order('date, start_time ASC').by_month Date.today
-        when "daily"
-          @slots = Slot.order('date, start_time ASC').by_day Date.today
-        when "next_week"
-          @slots = Slot.order('date, start_time ASC').by_week(Date.today + 7.days)
-        when "next_month"
-          @slots = Slot.order('date, start_time ASC').by_next_month Date.today
-        when "tomorrow"
-          @slots = Slot.order('date, start_time ASC').by_tomorrow Date.today
-        else
-          @slots = Slot.all(:order => "date, start_time DESC")
-      end
 
-      respond_to do |format|
-        format.html  { render :html => @slots}
-        format.xml  { render :xml => @slots }
-        format.js  { render :json => @slots }
-      end
-
-    else
-      flash[:warning] = "You must be signed in to view sessions"
-      redirect_to root_path
+    #Detemine the View for Slots Monthly, Weekly, or Daily
+    case params[:view]
+      when "weekly"
+        @slots = Slot.order('date, start_time ASC').by_week Date.today
+      when "monthly"
+        @slots = Slot.order('date, start_time ASC').by_month Date.today
+      when "daily"
+        @slots = Slot.order('date, start_time ASC').by_day Date.today
+      when "next_week"
+        @slots = Slot.order('date, start_time ASC').by_week(Date.today + 7.days)
+      when "next_month"
+        @slots = Slot.order('date, start_time ASC').by_next_month Date.today
+      when "tomorrow"
+        @slots = Slot.order('date, start_time ASC').by_tomorrow Date.today
+      else
+        @slots = Slot.all(:order => "date, start_time DESC")
     end
+
+    respond_to do |format|
+      format.html  { render :html => @slots}
+      format.xml  { render :xml => @slots }
+      format.js  { render :json => @slots }
+    end
+
   end
 
   def show
-    if signed_in?
-      @slot = Slot.find(params[:id])
-      @riders = @slot.signed_up.includes(:user)
-      @waiting = @slot.waiting_list.includes(:user)
-    else
-      flash[:warning] = "You must be signed in to view this!"
+    @slot = Slot.find(params[:id])
+    @riders = @slot.signed_up.includes(:user)
+    @waiting = @slot.waiting_list.includes(:user)
+  end
+
+private
+
+  def admin_check
+    unless current_user.admin?
+      flash[:warning] = "you are not able to perform this action"
+      redirect_to slots_path
+    end
+  end
+
+  def sign_in_check
+    unless signed_in?
+      flash[:warning] = "please sign in"
       redirect_to root_path
     end
   end
