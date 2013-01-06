@@ -8,6 +8,7 @@
       <thead>
           <th>First Name</th>
           <th>Last Name</th>
+          <th>Active</th>
           <th>Admin</th>
           <th>Email Address</th>
           <th>Joined</th>
@@ -19,6 +20,7 @@
         <tr>
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
+          <td><%= user.is_active? %></td>
           <td><%= is_admin(user) %></td>
           <td><%= user.email %></td>
           <td><%= time_ago_in_words(user.created_at) %></td>

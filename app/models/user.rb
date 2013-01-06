@@ -71,6 +71,15 @@ class User < ActiveRecord::Base
     self.slots.count(:conditions => ["date >= ?", Date.today])
   end
 
+  def is_active?
+    if active?
+      val = :yes
+    else
+      val = :no
+    end
+    val
+  end
+
   def get_slot_state(slot_id)
     list = self.lists.find_by_slot_id(slot_id)
     list.state

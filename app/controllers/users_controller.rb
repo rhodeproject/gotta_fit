@@ -51,7 +51,8 @@ class UsersController < ApplicationController
         @user.update_attribute(:purchased_rides, params[:user][:purchased_rides]) &&
         @user.update_attribute(:email, params[:user][:email]) &&
         @user.update_attribute(:first_name, params[:user][:first_name]) &&
-        @user.update_attribute(:last_name, params[:user][:last_name])
+        @user.update_attribute(:last_name, params[:user][:last_name]) &&
+        @user.update_attribute(:active, params[:user][:active])
       flash[:success] = "User update successful!"
       redirect_to users_path
     else
