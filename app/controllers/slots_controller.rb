@@ -1,5 +1,5 @@
 class SlotsController < ApplicationController
-  before_filter :admin_check, :only => [:create, :update, :destroy]
+  before_filter :admin_check, :only => [:create, :destroy]
   before_filter :sign_in_check
 
   def new
@@ -21,9 +21,9 @@ class SlotsController < ApplicationController
     elsif params[:commit] == "add/remove rider" #admin adds/removes another user
       user = User.find(params[:all][:users])
       if @slot.signed_up?(user)
-        flash[:success] = @slot.remove_user(user)
+        flash[:success] = @slot.remove_user(user) if current_user.admin?
       else
-        flash[:success] = @slot.add_user(user)
+        flash[:success] = @slot.add_user(user) if current_user.admin?
       end
     elsif params[:commit] == "Remove Me" #remove user
       if signed_up?

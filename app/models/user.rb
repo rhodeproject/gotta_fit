@@ -103,6 +103,14 @@ class User < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
+  #use this method to return the class active/inactive
+  #this is used to make the user name to be in red if they are inactive
+  def active_class
+    act_class = :active
+    act_class = :inactive unless self.active?
+    act_class
+  end
+
   #private methods for the user model
   private
   def create_remember_token

@@ -1,15 +1,14 @@
 <%= provide(:title, 'Edit Slot') %>
 <div class="row">
   <div class="span12">
-    <h4><%= @slot.description %></h4>
-    <%= link_to "[show details...]", '#', id: "showSlotEdit" %>
+    <h4><%= @slot.description %> - edit</h4>
   </div>
 </div>
 <hr class="style-four">
 <div class="row">
-  <div class="span12">
-    <%= form_for @slot, id: "slot_edit" do |f| %>
-        <%= render 'shared/errors', object: f.object %>
+  <div class="span12 show-edit">
+    <%= form_for @slot, :id => "slot_edit" do |f| %>
+        <%= render 'shared/errors', :object => f.object %>
         <%= f.label :description %>
         <%= f.text_field :description %>
 
@@ -22,7 +21,7 @@
         <%= f.label :spots %>
         <%= f.text_field :spots %>
         <br>
-        <%= f.submit "Update", class: "btn btn-large btn-primary" %>
+        <%= f.submit "Update", :class => "btn btn-large btn-primary" %>
 
     <% end %>
   </div>

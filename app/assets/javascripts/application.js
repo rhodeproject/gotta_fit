@@ -20,6 +20,10 @@ $(document).ready(function(){
     $("#flash_message").delay(5000).fadeOut(1000);
 });
 
+function logIt(text){
+    window.console && console.log(text);
+}
+
 
 
 

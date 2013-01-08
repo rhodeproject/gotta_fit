@@ -15,9 +15,10 @@ $(document).ready(function(){
     $('#btnSession').hide();
     $('.edit_slot').hide();
 
-    $('#showSlotEdit').click(function(event){
-        $('.edit_slot').slideToggle(100);
-    });
+    //show  $('.edit_slot') if the class of the parent div is 'show-edit'
+    if($('.edit_slot').length > 0 && $('.edit_slot').parent().hasClass('show-edit')){
+        $('.edit_slot').slideToggle(700);
+    }
 
     /*Add User for Admin*/
     $('#btnAdminAddUser').click(function(event){
@@ -169,13 +170,9 @@ function currentSlot(sDate, sTime){
     splitMinute = splitTime[1];
     splitSecond = splitTime[2];
 
-    window.console && console.log(splitDate);
-    window.console && console.log(splitTime);
-    window.console && console.log("Split Year" + splitYear);
     dDate = new Date();
     slotDate = new Date(splitYear,splitMonth,splitDay,splitHour,splitMinute,splitSecond);
-    window.console && console.log(dDate);
-    window.console && console.log(slotDate);
+
     if (dDate < slotDate){
         $('#btnSession').show();
         $('.edit_slot').fadeIn();

@@ -154,3 +154,18 @@ tr.new_slot{
   color: green;
   font-style: italic;
 }
+
+//change text color if user is inactive
+.inactive{
+  color: red;
+}
+
+.active{
+ //color: green;
+ //nothing right now, active users should appear normal
+}
+
+.inactive-background{
+  background-color: #90ee90;
+  color: white;
+}

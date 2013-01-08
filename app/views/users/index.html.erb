@@ -20,16 +20,20 @@
         <tr>
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
-          <td><%= user.is_active? %></td>
+          <td class="<%= user.active_class %>"><%= user.is_active? %></td>
           <td><%= is_admin(user) %></td>
           <td><%= user.email %></td>
           <td><%= time_ago_in_words(user.created_at) %></td>
           <td><%= ride_count(user) %></td>
-          <td><%= link_to "Edit", user, :method => :edit%> |
+          <td><%= link_to "Edit", user, :method => :edit%>
             <%= link_to "Delete", user, :confirm => 'Are you sure?', :method => :delete%></td>
         </tr>
       <% end %>
       </tbody>
     </table>
+
+  </div>
+  <div class="span10">
+    <p class="inactive" id="inactive_key">*inactive user in red</p>
   </div>
 </div>
