@@ -14,19 +14,38 @@ $(document).ready(function(){
        "bFilter": false,
        "bInfo": true,
        "bAutoWidth": false,
-       "aaSorting": [[1, "asc"]]
+       "aaSorting": [[1, "asc"]],
+       "fnRowCallback": function(nRow, aData, iDisplayIndex){ //change the color of text based on cell content
+           if (aData[6] < 0){  //if the rides remaining are negative, change text to red
+               $('td:eq(6)', nRow).css('color', 'red');
+           }
+           if (aData[2] == "no"){ //if the user is inactive change the color of the whole row to red
+               $('td:eq(0)',nRow).css('color','red'); //First Name
+               $('td:eq(1)',nRow).css('color','red'); //Last Name
+               $('td:eq(2)',nRow).css('color','red'); //Active
+               $('td:eq(3)',nRow).css('color','red'); //Admin
+               $('td:eq(4)',nRow).css('color','red'); //Email Address
+               $('td:eq(5)',nRow).css('color','red'); //Joined - Days Ago
+               $('td:eq(6)',nRow).css('color','red'); //Remaining Rides
+           }
+           return nRow;
+
+       },
+       "fnFooterCallback": function(nRow, aaData, iStart, iEnd, aiDisplay){ //determine if there are inactive users in table
+           //Calculate the total number of inactive users
+           var iTotalInactive = 0;
+           for (var i=0; i<aaData.length; i++){
+               if (aaData[i][2] == "no"){
+                   iTotalInactive++;
+               }
+           }
+           //Modify the footer
+           if (iTotalInactive > 0){ //if there are inactive users display note
+               $('#tblUsers_paginate').after("<br><div class='inactive'>*inactive users in red</div>");
+           }
+
+       }
    });
-
-   //by default hide the inactive key
-   $('#inactive_key').hide();
-
-    //call the two functions that will style the table based on data
-    //for example, if a user is inactive the text should be red and if a user
-    //has negative rides, the ride number is in "the red"
-    if($("#tblUsers").length > 0){
-        rowColor("tblUsers","inactive");
-        negNumber("tblUsers");
-    }
 
     $('#frmLogin').hide();
 
@@ -61,32 +80,4 @@ $(document).ready(function(){
     });
 });
 
-//function for changing the text of a row to red if the user is unactive
-function rowColor(tableName, className){
-    var rows = document.getElementById(tableName).getElementsByTagName('tr');
-    $.each(rows, function(i, row){ //loop through all the rows
-        var columns = row.getElementsByTagName('td');
-        $.each(columns, function(i, col){
-            //logIt($(this));
-            if ($(this).hasClass(className)){
-                $(this).parent().css('color','red').fadeIn(1000);
-                $('#inactive_key').fadeIn(1000);
-            }
-        });
-    });
-}
 
-//function for turning negative numbers red in a table
-function negNumber(tableName){
-    var rows = document.getElementById(tableName).getElementsByTagName('tr');
-    $.each(rows, function(i, row){
-        var columns = row.getElementsByTagName('td');
-        $.each(columns, function(i, col){
-            //logIt($(this));
-            //logIt($(this).text());
-            if($(this).text() < 0){
-                $(this).css('color', 'red').fadeIn(1000);
-            }
-        });
-    });
-}
