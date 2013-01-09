@@ -34,6 +34,7 @@ $(document).ready(function(){
        "fnFooterCallback": function(nRow, aaData, iStart, iEnd, aiDisplay){ //determine if there are inactive users in table
            //Calculate the total number of inactive users
            var iTotalInactive = 0;
+           var iTotalAdmin = 0;
            for (var i=0; i<aaData.length; i++){
                if (aaData[i][2] == "no"){
                    iTotalInactive++;
@@ -41,9 +42,10 @@ $(document).ready(function(){
            }
            //Modify the footer
            if (iTotalInactive > 0){ //if there are inactive users display note
-               $('#tblUsers_paginate').after("<br><div class='inactive'>*inactive users in red</div>");
+               if ($('#inActiveNotice').length == 0){
+                   $('#tblUsers_paginate').after("<br><div id='inActiveNotice' class='inactive'>*inactive users in red</div>");
+               }
            }
-
        }
    });
 
