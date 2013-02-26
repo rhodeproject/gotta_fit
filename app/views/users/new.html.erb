@@ -3,10 +3,10 @@
 <div class="row">
   <div class="span4 offset4">
     <%= form_for (@user) do |f| %>
-        <%= render 'shared/errors', object: f.object %>
-        <%= render 'fields', f: f %>
+        <%= render 'shared/errors', :object => f.object %>
+        <%= render 'fields', :f => f %>
 
-        <%= f.submit "Create My Account", class: "btn btn-primary" %>
+        <%= f.submit "Create My Account", :class => "btn btn-primary" %>
     <% end %>
   </div>
 </div>
