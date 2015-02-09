@@ -19,7 +19,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.by_last_name
+    #@users = User.by_last_name
+    @users = User.all
   end
 
   def confirm()

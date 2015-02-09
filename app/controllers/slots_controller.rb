@@ -71,9 +71,36 @@ class SlotsController < ApplicationController
   end
 
   def calendar
-    @slots = Slot.all
-    @slots = Slot.paginate(:page =>  params[:page], :per_page => 7).order('date, start_time ASC').by_month Date.today
+    #@slots = Slot.all
+    #@slots = Slot.paginate(:page =>  params[:page], :per_page => 7).order('date, start_time ASC').by_month Date.today
+    #convert the start_time datetime to string and extract the date and time
+    date_format = "%Y-%m-%d"
+    time_format = "%H:%M:%S"
 
+    if (params['start_time'])
+      s_date = Time.at(params['start_time'].to_i)
+      start_date = s_date.strftime(date_format)
+      start_time = s_date.strftime(time_format)
+    end
+
+    if (params['end_time'])
+      e_date = Time.at(params['end_time'].to_i)
+      end_date = e_date.strftime(date_format)
+      end_time = e_date.strftime(time_format)
+    end
+
+    logger.info "start date: " +start_date unless start_date.nil?
+    logger.info "start_time:" +start_time unless start_time.nil?
+    logger.info "end date: " +end_date unless end_date.nil?
+    logger.info "end time: " +end_time unless end_time.nil?
+
+    @slots = Slot.scoped
+    @slots = @slots.after_date(end_date) unless end_date.nil?
+    @slots = @slots.before_date(start_date) unless start_date.nil?
+
+    @slots = @slots.after(start_time) unless start_time.nil?
+    @slots = @slots.before(end_time) unless end_time.nil?
+    logger.info @slots.count
     respond_to do |format|
       format.html  { render :html => @slots}
       format.xml  { render :xml => @slots }
@@ -98,6 +125,8 @@ class SlotsController < ApplicationController
         @slots = Slot.order('date, start_time ASC').by_next_month Date.today
       when "tomorrow"
         @slots = Slot.order('date, start_time ASC').by_tomorrow Date.today
+      when "year"
+        @slots = Slot.order('date, start_time ASC').by_year Date.today
       else
         @slots = Slot.all(:order => "date, start_time DESC")
     end

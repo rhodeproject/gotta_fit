@@ -41,9 +41,12 @@ class Slot < ActiveRecord::Base
   scope :by_next_week, lambda { |d| {:conditions =>  {:date => d.beginning_of_week.next_week..d.end_of_week.next_week}}}
   scope :by_next_month, lambda {|d| {:conditions => {:date => d.beginning_of_month.next_month..d.end_of_month.next_month}}}
   scope :by_tomorrow, lambda {|d| {:conditions => {:date => d.tomorrow}}}
+  scope :by_year, lambda {|d| {:conditions => {:date => d.beginning_of_year..d.end_of_year}}}
 
-  scope :before, lambda {|end_time| {:conditions => ["ends_time < ?", Slot.format_date(end_time)] }}
-  scope :after, lambda {|start_time| {:conditions => ["starts_time > ?", Slot.format_date(start_time)] }}
+  scope :before, lambda {|end_time| {:conditions => ["end_time < ?", Slot.format_date(end_time)] }}
+  scope :after, lambda {|start_time| {:conditions => ["start_time > ?", Slot.format_date(start_time)] }}
+  scope :before_date, lambda {|start_date| {:conditions => ["date > ?", start_date] }}
+  scope :after_date, lambda {|end_date| {:conditions => ["date < ?", end_date] }}
 
   #scope :waiting_list, {:conditions => ["state = ? and slot_id = ?", "Waiting", self.id]}
   #scope :signed_up, {:conditions => ["state = ? and slot_id = ?", "Signed Up", self.id]}
@@ -112,7 +115,8 @@ class Slot < ActiveRecord::Base
     list = self.lists.where(:state => STATUS_WAITING).order('updated_at ASC')
     if list.count > 0
       list[0].update_attribute('state', STATUS_SIGNED_UP)
-      user.remove_ride
+      list[0].user.remove_ride
+      #user.remove_ride
       UserMailer.wait_list_notice(list[0].user, self).deliver
     end
   end
