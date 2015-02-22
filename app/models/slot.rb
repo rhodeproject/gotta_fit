@@ -69,7 +69,7 @@ class Slot < ActiveRecord::Base
       check_wait_list(user)
     end
     if self.users.delete(user)
-      user.add_ride
+      user.add_ride unless list[0].state == STATUS_WAITING
       flash = "#{user.name} has been removed from this session"
     else
       flash = "There was a problem removing #{user.name} from this session"
